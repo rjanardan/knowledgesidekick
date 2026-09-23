@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Savings &amp; Grounding — Knowledge Sidekick</title>
+<meta name="description" content="Where does token cost come from in agentic systems, and how does grounding in retrievable knowledge reduce both cost and confident error? A short research-style note.">
+<link rel="canonical" href="https://knowledgesidekick.com/token-savings.html">
+<meta property="og:title" content="Token Savings &amp; Grounding — Knowledge Sidekick">
+<meta property="og:description" content="Token cost in agentic systems is often a knowledge problem in disguise: too much context, too little retrieval, and not enough grounding. A short research-style note.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.com/token-savings.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Token Savings &amp; Grounding — Knowledge Sidekick">
+<meta name="twitter:description" content="Token cost is often a knowledge problem in disguise. Grounding reduces cost and confidence errors.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/token-savings.html#article",
+      "headline": "Token Savings and Grounding",
+      "description": "Token cost in agentic systems is often a knowledge problem in disguise: too much context, too little retrieval, and not enough grounding. A short research-style note.",
+      "inLanguage": "en",
+      "author": {"@id": "https://knowledgesidekick.com/#person"},
+      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
+      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Where does token cost come from in agentic systems?","acceptedAnswer":{"@type":"Answer","text":"From the knowledge the system moves, reads, and reasons over. Every document chunk you retrieve, every turn of conversation you keep, every long context you send, and every time you make the agent re-read something it already knew all consume tokens. A lot of cost is therefore a knowledge problem: sending too much, sending it repeatedly, or sending the wrong knowledge and then correcting it with more tokens."}},
+        {"@type":"Question","name":"What is grounding in an AI agent?","acceptedAnswer":{"@type":"Answer","text":"Grounding is the practice of tying what the agent says or does to knowledge it can point to: retrieved documents, system-of-record state, verified context, or other evidence the agent is actually allowed to use. A grounded answer can be checked against something outside the model's memory. An ungrounded answer may sound right and still be wrong."}},
+        {"@type":"Question","name":"How does grounding help with cost?","acceptedAnswer":{"@type":"Answer","text":"Grounding can reduce cost when it replaces long, generic context with a smaller, more relevant slice. If the agent retrieves exactly the knowledge it needs and does not carry around a large volume of unneeded text, it spends fewer tokens on reading and re-reading. Grounding also reduces the cost of getting things wrong, because a confident mistake is often more expensive than the retrieval that would have prevented it."}},
+        {"@type":"Question","name":"Is RAG the same as grounding?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. Retrieval-augmented generation is one way to ground an answer: you retrieve external knowledge and include it in the context. Grounding is the broader goal of making the agent's claims traceable to evidence. RAG can fail at grounding if the retrieval is poor, the context is noisy, or the agent treats everything it retrieved as equally authoritative. Grounding is the aim; RAG is one technique for it."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-token">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="/favicon.svg#lamp"></use></svg>
+      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
+    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/why-knowledge.html">Why Knowledge</a>
+      <a href="/enterprise.html">Enterprise</a>
+      <a href="/personal-assistant.html">Personal Assistant</a>
+      <a href="/context-engineering.html">Context Engineering</a>
+      <a href="/token-savings.html" class="current">Token Savings &amp; Grounding</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Cost and trust</span>
+    <h1>Token savings and grounding: a short research note</h1>
+    <p class="lede">Token cost in agentic systems is often a knowledge problem in disguise. Cut the wrong context and you save money. Ground the agent in the right knowledge and you save money and reduce confident error. The two ideas are closely related.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer-token">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>Why do token savings and grounding belong on the same page?</h3>
+    <p>Because both are downstream of the knowledge layer. If the system retrieves the right knowledge, in the right slice, at the right time, it tends to spend fewer tokens and make fewer ungrounded mistakes. If it does not, it tends to spend more tokens compensating for weak knowledge and still get things wrong. Token savings and grounding are not separate tricks; they are two outcomes of a better knowledge and context design.</p>
+  </div>
+</section>
+
+<section id="where-cost-comes-from">
+  <h2>Where token cost actually comes from</h2>
+  <p class="lead">Token cost is not just "how big is the model." In agentic systems, a lot of cost comes from how knowledge moves through the system.</p>
+  <p>A model call has an input side and an output side, and both are influenced by knowledge decisions. On the input side, every document chunk you retrieve, every prior turn you include, and every bit of context you paste costs tokens before the model has done anything useful. On the output side, a model that is unsure, or that is trying to compensate for missing knowledge by reasoning harder or by being verbose, can also cost more.</p>
+  <p>The practical point is that token cost is often not a model-pricing problem first. It is a knowledge-and-context problem:</p>
+  <ul>
+    <li><strong>Too much context.</strong> Sending more than the task needs is the most direct form of waste.</li>
+    <li><strong>Repetition.</strong> Sending the same knowledge repeatedly across turns, or re-embedding and re-retrieving things that did not change, adds cost without adding value.</li>
+    <li><strong>Noisy retrieval.</strong> Retrieving a large volume of marginally relevant text and expecting the model to find the one useful fact is expensive and unreliable.</li>
+    <li><strong>Correction loops.</strong> A model that gets something wrong because it lacked grounded knowledge often needs more turns to fix it, which is more cost on top of the original mistake.</li>
+  </ul>
+  <p>In other words, some of the cheapest wins in agentic cost are not "use a cheaper model." They are "send less, send better, and ground what you do send."</p>
+</section>
+
+<section id="grounding-defined">
+  <h2>What grounding means here</h2>
+  <p>Grounding is the practice of tying what the agent says or does to knowledge it can point to. A grounded answer is one you can check against something outside the model's memory: a retrieved document, the current state of a system of record, a verified context slice, or a permissioned source the agent is actually allowed to use.</p>
+  <p>This matters for two reasons. First, correctness. A model can sound authoritative and still be wrong about something it was never given. Grounding reduces that gap by making the agent work from evidence it has actually been given, and by making that evidence visible when it matters.</p>
+  <p>Second, trust. A grounded answer is easier to trust because it can be checked. If the agent can say what it relied on, and that thing is current and authoritative, then the answer is not just plausible; it is auditable. That distinction is often the difference between an agent you can use in a real process and an agent you only use in a demo.</p>
+</section>
+
+<section id="grounding-vs-rag">
+  <h2>Grounding, RAG, and the gap between them</h2>
+  <p>Retrieval-augmented generation is one way to ground an answer. You retrieve external knowledge and include it in the context, so the model has something to work from. That is useful and widely used. But RAG is a technique, and grounding is the goal. They are not the same thing.</p>
+  <p>A RAG system can still fail at grounding. If the retrieval returns the wrong chunk, or too much noise, or stale knowledge, the model can still produce a confident answer that is not well supported. If the system treats retrieved text as equally authoritative regardless of source or freshness, grounding is weakened. If the system cannot show what it relied on, the answer is less checkable.</p>
+  <p>The useful distinction is this: RAG is one mechanism for putting knowledge into context. Grounding is the property that the agent's claims are traceable to knowledge that is current, authoritative, and appropriately scoped. You can have RAG without good grounding. You cannot have good grounding without good knowledge and a clear line from claim to source.</p>
+</section>
+
+<section id="grounding-techniques">
+  <h2>A short inventory of grounding techniques</h2>
+  <div class="table-wrap">
+    <table class="cost-table">
+      <caption>Common grounding-oriented techniques, and what each is good for</caption>
+      <thead>
+        <tr><th>Technique</th><th>What it helps</th><th>Where it can fall short</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Retrieve and cite</td><td>Tying an answer to specific retrieved passages</td><td>Depends on retrieval quality and freshness; citations can be wrong if the retrieval is wrong</td></tr>
+        <tr><td>Curated context slices</td><td>Reducing cost and noise by sending only what the task needs</td><td>Requires good selection; a bad slice is worse than a larger one</td></tr>
+        <tr><td>Tool-grounded actions</td><td>Grounding actions in a system of record rather than in the model's memory</td><td>Only as good as the tool and its data; does not help if the tool is the wrong one</td></tr>
+        <tr><td>Verification after generation</td><td>Catching obvious errors by checking the output against a source</td><td>Adds a step; not a substitute for getting the knowledge right in the first place</td></tr>
+        <tr><td>Refusal when ungrounded</td><td>Preventing confident error by saying "I do not know" when the evidence is missing</td><td>Requires the system to recognize when it lacks grounding; easy to under- or over-use</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>No single technique is the answer. Grounding is usually a combination: retrieve well, scope tightly, prefer authoritative sources, make the chain visible, and know when not to answer.</p>
+</section>
+
+<section id="the-cost-trust link">
+  <h2>Why cost and trust are linked</h2>
+  <p class="lead">Good grounding tends to improve both cost and trust at the same time, which is why the two belong together.</p>
+  <p>The link is straightforward. A system that has the right knowledge in a tight context does not need to read as much, does not need to re-read as often, and does not need as many correction turns. That is cost. A system whose answers are tied to current, authoritative knowledge is easier to trust because its answers are checkable. That is trust.</p>
+  <p>The opposite is also true. A system with weak knowledge often pays for it twice: once in the tokens spent moving around knowledge that is not quite right, and again in the cost of the mistakes that result. A system whose answers are ungrounded may look impressive in a demo and still be unusable in a real process because nobody can tell whether to believe it.</p>
+  <p>This is one of the places where the knowledge layer stops being abstract. If you get knowledge and context right, you often improve cost and trust together. If you do not, you pay for the deficiency in both currencies.</p>
+</section>
+
+<section id="where-next-token">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/context-engineering.html">Context Engineering</a> — the immediate upstream of token and grounding decisions: what the agent sees.</li>
+    <li><a href="/why-knowledge.html">Why Knowledge for Agentic AI</a> — the flagship argument for why this whole layer matters.</li>
+    <li><a href="/enterprise.html">Knowledge in Enterprise Context</a> — where the knowledge comes from in the first place, and why freshness matters for grounding.</li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Where does token cost come from in agentic systems?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>From the knowledge the system moves, reads, and reasons over. Every document chunk you retrieve, every turn of conversation you keep, every long context you send, and every time you make the agent re-read something it already knew all consume tokens. A lot of cost is therefore a knowledge problem: sending too much, sending it repeatedly, or sending the wrong knowledge and then correcting it with more tokens.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is grounding in an AI agent?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Grounding is the practice of tying what the agent says or does to knowledge it can point to: retrieved documents, system-of-record state, verified context, or other evidence the agent is actually allowed to use. A grounded answer can be checked against something outside the model's memory. An ungrounded answer may sound right and still be wrong.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does grounding help with cost?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Grounding can reduce cost when it replaces long, generic context with a smaller, more relevant slice. If the agent retrieves exactly the knowledge it needs and does not carry around a large volume of unneeded text, it spends fewer tokens on reading and re-reading. Grounding also reduces the cost of getting things wrong, because a confident mistake is often more expensive than the retrieval that would have prevented it.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is RAG the same as grounding?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Not exactly. Retrieval-augmented generation is one way to ground an answer: you retrieve external knowledge and include it in the context. Grounding is the broader goal of making the agent's claims traceable to evidence. RAG can fail at grounding if the retrieval is poor, the context is noisy, or the agent treats everything it retrieved as equally authoritative. Grounding is the aim; RAG is one technique for it.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — background on RAG stages (naive, advanced, modular) and retrieval augmentation patterns. <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+    <li>A Survey on RAG Meets LLMs: Towards Retrieval-Augmented Large Language Models — overview of retrieval, augmentation, and generation integration. <a href="https://arxiv.org/abs/2405.06211">arxiv.org/abs/2405.06211</a></li>
+    <li>Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs — cost/quality tradeoffs in retrieval depth and token billing. <a href="https://arxiv.org/abs/2606.02581">arxiv.org/abs/2606.02581</a></li>
+    <li>Cost-Aware Retrieval-Augmentation Reasoning Models with Adaptive Retrieval Depth — latency and token cost observations in retrieval-augmented reasoning. <a href="https://arxiv.org/abs/2510.15719">arxiv.org/abs/2510.15719</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.menu-toggle');
+  var nav=document.getElementById('nav-primary');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!open));
+      nav.classList.toggle('open',!open);
+    });
+  }
+  var faqs=document.querySelectorAll('.faq .q');
+  faqs.forEach(function(q){
+    var btn=q.querySelector('.open');
+    var a=q.nextElementSibling;
+    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
+    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
+    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
+  });
+})();
+</script>
+</body>
+</html>

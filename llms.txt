@@ -1,0 +1,33 @@
+# knowledgesidekick.com
+
+Business and technical education on why knowledge is the missing layer in agentic AI
+and AI agents, and what disciplined knowledge representation, management, context
+engineering, grounding, and encoding look like in practice.
+
+## Sections
+
+- Why Knowledge for Agentic AI — why knowledge matters for agents; the business and
+  technical case. https://knowledgesidekick.com/why-knowledge.html
+- Knowledge in Enterprise Context — collection and freshness challenges at
+  organizational scale. https://knowledgesidekick.com/enterprise.html
+- Knowledge in Personal Assistant Context — privacy, control, DPDP (India), GDPR (EU),
+  and the personal-knowledge problem. https://knowledgesidekick.com/personal-assistant.html
+- Context Engineering — context windows as a knowledge-delivery problem; patterns.
+  https://knowledgesidekick.com/context-engineering.html
+- Token Savings & Grounding — where token cost comes from; grounding claims in knowledge.
+  https://knowledgesidekick.com/token-savings.html
+- Home — the front door and table of contents. https://knowledgesidekick.com/
+- Contact — email and links. https://knowledgesidekick.com/contact.html
+
+## About
+
+Author: Janardan Revuru. Background relevant to this topic: M.Tech in Data Science
+(BITS Pilani, 2024); PhD in progress on multi-agent communication (expected around 2028);
+three patents; AI Centre of Excellence built and scaled from zero to roughly 50 engineers
+and 15 models; organizer of the Bengaluru JavaScript Meetup.
+
+Full engineering portfolio: https://janalogy.com
+
+## Contact
+
+Email: janardan.revuru@gmail.com

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Sidekick — why knowledge is the missing layer in agentic AI</title>
+<meta name="description" content="Agentic AI systems do not fail from weak models as often as they fail from weak knowledge. A business and technical guide to knowledge for AI agents: representation, management, context engineering, grounding, and encoding.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
+<meta property="og:title" content="Knowledge Sidekick — knowledge for agentic AI">
+<meta property="og:description" content="Agentic AI systems fail less from weak models than from weak knowledge. A guide for leaders funding or building agentic AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge Sidekick — knowledge for agentic AI">
+<meta name="twitter:description" content="Agentic AI systems fail less from weak models than from weak knowledge. A guide for leaders funding or building agentic AI.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "Business and technical education on why knowledge is the missing layer in agentic AI and AI agents.",
+      "publisher": {"@id": "https://knowledgesidekick.com/#person"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": ["https://janalogy.com","https://www.linkedin.com/in/janardan-revuru"]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-why-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="/favicon.svg#lamp"></use></svg>
+      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
+    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
+      <a href="/" class="current">Home</a>
+      <a href="/why-knowledge.html">Why Knowledge</a>
+      <a href="/enterprise.html">Enterprise</a>
+      <a href="/personal-assistant.html">Personal Assistant</a>
+      <a href="/context-engineering.html">Context Engineering</a>
+      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">A business and technical guide</span>
+    <h1>Agentic AI systems fail less from weak models than from weak knowledge.</h1>
+    <p class="lede">When an AI agent plans, calls tools, remembers, or grounds its answers, the limiting factor is rarely the model alone. It is what the system knows, how that knowledge is represented, how current it is, and how much of it it is allowed to see. This site is a guide for leaders funding or building agentic AI who want to treat knowledge as a first-class layer rather than an afterthought.</p>
+    <p class="meta">Written by Janardan Revuru · <a href="/contact.html">Get in touch</a> · Portfolio: <a href="https://janalogy.com">janalogy.com</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="problem">
+  <h2>The problem, stated plainly</h2>
+  <p class="lead">Most agentic AI projects do not stumble because the underlying model cannot reason. They stumble because the system is asked to act on knowledge it does not reliably have.</p>
+  <p>An agent that can write a plausible plan but cannot tell which procedure is current, which customer record is authoritative, or which fact it is allowed to use will produce confident mistakes. In enterprise settings those mistakes are operational. In personal settings they are private. Either way, the cost is usually attributed to the model when it is actually a knowledge problem.</p>
+  <p>This matters more now than it did for chatbot-style systems, because agents <em>act</em>. A system that only answers can be wrong in a low-stakes way. A system that retrieves a number, runs an API call, changes a record, or summarizes a private inbox on the basis of stale or missing knowledge can do real damage at scale and at speed.</p>
+</section>
+
+<section id="what-this-site-covers">
+  <h2>What this site covers</h2>
+  <p>The pages below are written as short, self-contained position pieces. Each one opens with the direct answer to why the topic matters, then goes into enough substance to be useful on its own. They are not marketing copy and they are not a textbook; they are meant to be read by a technical leader who is funding or building agentic work and wants a clearer vocabulary for the knowledge layer.</p>
+
+  <div class="triplet">
+    <article class="challenge">
+      <span class="tag">Flagship</span>
+      <h3><a href="/why-knowledge.html">Why Knowledge for Agentic AI</a></h3>
+      <p>The core argument: knowledge is a cross-cutting layer in agentic systems, not a single module. Defines what this site means by knowledge and why agents make knowledge failures more expensive.</p>
+    </article>
+    <article class="challenge">
+      <span class="tag">Enterprise</span>
+      <h3><a href="/enterprise.html">Knowledge in Enterprise Context</a></h3>
+      <p>The hard part at organizational scale: collecting knowledge that lives in documents, tickets, chats, heads, and tools, and keeping it current enough that agents can trust it.</p>
+    </article>
+    <article class="challenge">
+      <span class="tag">Personal</span>
+      <h3><a href="/personal-assistant.html">Knowledge in Personal Assistant Context</a></h3>
+      <p>The hard part at human scale: a personal assistant that knows your emails, calendar, messages, and habits raises privacy, control, and legal questions under regimes such as the DPDP Act in India and the GDPR in Europe.</p>
+    </article>
+    <article class="challenge">
+      <span class="tag">Engineering</span>
+      <h3><a href="/context-engineering.html">Context Engineering</a></h3>
+      <p>Context windows are a knowledge-delivery problem. This page treats context as something you design for, not something you hope the model will make sense of.</p>
+    </article>
+    <article class="challenge">
+      <span class="tag">Cost &amp; Trust</span>
+      <h3><a href="/token-savings.html">Token Savings &amp; Grounding</a></h3>
+      <p>Where token cost actually comes from in agentic systems, and how grounding claims in retrievable knowledge reduces both cost and the kind of confident error that hurts trust.</p>
+    </article>
+  </div>
+
+  <p class="small">Each theme page has its own short FAQ at the bottom. The whole site is intentionally small and flat on purpose: nine pages is enough to make the argument without padding it.</p>
+</section>
+
+<section id="who-this-is-for">
+  <h2>Who this is for</h2>
+  <p>This site is written for the person who signs off on agentic AI work and the person who has to make it behave. Concretely:</p>
+  <ul>
+    <li>A leader or manager deciding whether a knowledge layer is worth treating as a first-class investment.</li>
+    <li>An architect or engineer who is being asked to make an agent reliable, cheap enough to run, and safe enough to use on real data.</li>
+    <li>A team that has a model working in a demo and is now discovering that the real work is knowing what to believe, what is current, and what the system is allowed to see.</li>
+  </ul>
+  <p>If you already have a working demo and are now discovering that the interesting questions are about knowledge, freshness, context, and grounding, you are exactly the audience.</p>
+</section>
+
+<section id="about">
+  <h2>About this site</h2>
+  <div class="bio-card">
+    <p>Knowledge Sidekick is a business and technical guide to the knowledge layer in agentic AI. It is not a product landing page. The goal is to help leaders and engineers reason clearly about representation, management, context engineering, grounding, and encoding before they spend money or build something brittle.</p>
+    <p>The author is Janardan Revuru, an engineering leader working on AI at scale. Background relevant to this topic: an M.Tech in Data Science from BITS Pilani (2024), a PhD in progress on communication in multi-agent systems (expected around 2028), three patents, and experience building and scaling an AI Centre of Excellence from zero to roughly 50 engineers and 15 models. He also organizes the Bengaluru JavaScript Meetup.</p>
+    <p class="credits">Full engineering portfolio: <a href="https://janalogy.com">janalogy.com</a> · <a href="/contact.html">Contact</a> · Built as a small static site so the content itself is fast, citable, and easy for machines to read — consistent with the argument the site makes.</p>
+  </div>
+</section>
+
+<section id="contact-tease">
+  <h2>Talk about a knowledge layer for your agentic system</h2>
+  <p>If you are funding or building agentic AI and want to think through knowledge representation, freshness, context, or grounding on a real project, reach out by email. The site does not have a contact form on purpose: if the topic matters, a direct conversation is usually more useful than a ticket.</p>
+  <p class="read-more"><a href="/contact.html">Contact — knowledgesidekick.com</a></p>
+</section>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+  </div>
+</footer>
+
+<script>
+/* Sticky nav: mobile menu toggle + active link by path */
+(function(){
+  var toggle=document.querySelector('.menu-toggle');
+  var nav=document.getElementById('nav-primary');
+  if(!toggle||!nav) return;
+  toggle.addEventListener('click',function(){
+    var open=toggle.getAttribute('aria-expanded')==='true';
+    toggle.setAttribute('aria-expanded',String(!open));
+    nav.classList.toggle('open',!open);
+  });
+  var links=nav.querySelectorAll('a');
+  var current='/';
+  try{ current=window.location.pathname.replace(/\/index\.html?$/,'/').replace(/\/$/,'/') || '/'; }catch(e){}
+  links.forEach(function(a){
+    var href=a.getAttribute('href');
+    if(!href) return;
+    if(href===current||current.endsWith(href)||href.replace(/^[/]+/,'/')===current || current===('/'+href.replace(/^[/]+/,''))){
+      a.classList.add('current');
+    }
+  });
+})();
+</script>
+</body>
+</html>

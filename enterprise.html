@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge in Enterprise Context — Knowledge Sidekick</title>
+<meta name="description" content="Collecting enterprise knowledge and keeping it current is hard at scale. This page explains the challenges: scattered sources, staleness, ownership, and what happens when agents act on stale knowledge.">
+<link rel="canonical" href="https://knowledgesidekick.com/enterprise.html">
+<meta property="og:title" content="Knowledge in Enterprise Context — Knowledge Sidekick">
+<meta property="og:description" content="Enterprise knowledge is scattered, stale-prone, and owned by people who are not paid to maintain it. A guide to the real challenges.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.com/enterprise.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge in Enterprise Context — Knowledge Sidekick">
+<meta name="twitter:description" content="Enterprise knowledge is scattered, stale-prone, and owned by people who are not paid to maintain it. A guide to the real challenges.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/enterprise.html#article",
+      "headline": "Knowledge in Enterprise Context",
+      "description": "Collecting enterprise knowledge and keeping it current is hard at scale. This page explains the challenges: scattered sources, staleness, ownership, and what happens when agents act on stale knowledge.",
+      "inLanguage": "en",
+      "author": {"@id": "https://knowledgesidekick.com/#person"},
+      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
+      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Why is enterprise knowledge hard to collect for AI agents?","acceptedAnswer":{"@type":"Answer","text":"Enterprise knowledge is rarely in one clean place. It is distributed across documents, tickets, chat, operational tooling, and people's heads. A lot of it is tacit, outdated, duplicated, or buried in tools that were never designed to be a knowledge source. Collecting it is not a dump-and-index problem; it is a problem of finding what matters, deciding what counts, and giving it ownership."}},
+        {"@type":"Question","name":"Why does enterprise knowledge go stale so fast?","acceptedAnswer":{"@type":"Answer","text":"Because companies change constantly. Procedures change, products ship, teams reorganize, access rules change, and people leave. Documentation rarely changes at the same speed. Research on knowledge management describes this as knowledge drift or expiring knowledge: information whose usefulness declines as conditions change, often without anyone noticing until it is used."}},
+        {"@type":"Question","name":"What is the risk of agents acting on stale enterprise knowledge?","acceptedAnswer":{"@type":"Answer","text":"A stale document used to mislead one person at a time. When the same document becomes context for an agent, the mistake can be repeated at scale and at speed. The deeper risk is not that the agent is wrong once; it is that the system treats stale knowledge as current and acts on it confidently."}},
+        {"@type":"Question","name":"What does disciplined enterprise knowledge look like?","acceptedAnswer":{"@type":"Answer","text":"Not a single perfect source of truth. A managed layer with ownership, provenance, freshness signals, and a path for tacit knowledge to become explicit. The goal is not perfection; it is knowing what is current, what is owned, what is safe to use, and what needs review."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-enterprise">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="/favicon.svg#lamp"></use></svg>
+      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
+    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/why-knowledge.html">Why Knowledge</a>
+      <a href="/enterprise.html" class="current">Enterprise</a>
+      <a href="/personal-assistant.html">Personal Assistant</a>
+      <a href="/context-engineering.html">Context Engineering</a>
+      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Enterprise setting</span>
+    <h1>Knowledge in enterprise context: the hard part is scale and freshness</h1>
+    <p class="lede">At organizational scale, the hard problem is not storing knowledge. It is collecting the knowledge that actually matters from places that were never designed to be knowledge sources, and keeping it current enough that agents can trust it.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer-enterprise">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>Why is knowledge hard in enterprise contexts?</h3>
+    <p>Because enterprise knowledge is scattered across documents, tickets, chat, operational tooling, and people's heads; because it goes stale faster than most teams maintain it; and because the people who know things are not paid to be knowledge publishers. For an agentic system, the consequence is simple: if the knowledge the agent acts on is scattered or stale, the agent will be confidently wrong in ways that are hard to see until they have already happened.</p>
+  </div>
+</section>
+
+<section id="why-enterprise-is-different">
+  <h2>Enterprise knowledge is not a single knowledge base</h2>
+  <p class="lead">The first mistake is to imagine enterprise knowledge as something you can point a retrieval system at and be done.</p>
+  <p>In a small team, knowledge often lives in a few obvious places: a wiki, a couple of shared docs, a Slack channel. In an enterprise, the same kind of knowledge is spread across many systems that were built for other purposes. The current state of a process might live in a ticketing tool, an operations dashboard, an internal wiki, a Slack thread, and an engineering lead's head, all at once. None of those systems is a knowledge base by design.</p>
+  <p>This matters because "collect the knowledge" sounds simple until you try it. The useful knowledge is not necessarily the knowledge that is easiest to retrieve. It is the knowledge that is authoritative, current, scoped correctly, and available to the agent with the right permissions. Finding that out is the work.</p>
+</section>
+
+<section id="knowledge-sources-landscape">
+  <h2>Where enterprise knowledge actually lives</h2>
+  <p>A useful way to think about enterprise knowledge is as a set of sources with different characteristics. None of these is "the knowledge base"; each contributes something and each has a failure mode.</p>
+
+  <div class="table-wrap">
+    <table>
+      <caption>Common enterprise knowledge sources and their failure modes</caption>
+      <thead>
+        <tr><th>Source</th><th>What it is good for</th><th>Where it fails an agent</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Internal documentation / wiki</td><td>Procedures, decisions, onboarding, reference material</td><td>Stale pages, orphaned docs, duplicate answers, no freshness signal</td></tr>
+        <tr><td>Tickets and issues</td><td>What is being worked on, current blockers, recent changes</td><td>Fragmented, noisy, not written as knowledge, hard to trust as a source of truth</td></tr>
+        <tr><td>Chat and messaging</td><td>Tacit context, decisions made in motion, tribal knowledge</td><td>Ephemeral, spread across channels, rarely curated, permissionally messy</td></tr>
+        <tr><td>Operational tooling and dashboards</td><td>Current state: inventory, approvals, status, access</td><td>Not written as knowledge; state changes faster than anyone reads it</td></tr>
+        <tr><td>People's heads (tacit knowledge)</td><td>The why behind decisions, edge cases, unwritten norms</td><td>Does not survive turnover; not retrievable until it is written down</td></tr>
+        <tr><td>Training and onboarding material</td><td>Stable onboarding and foundational knowledge</td><td>Often the slowest to update; can encode how things used to work</td></tr>
+      </tbody>
+    </table>
+    <div class="foot">Failure modes are illustrative, not exhaustive. The point is that each source contributes knowledge and each has a reason it cannot be trusted blindly.</div>
+  </div>
+
+  <p>The practical implication is that an agentic system in an enterprise is usually not reading from one source. It is reading from a mix, and the quality of its behavior depends on which sources it trusts, how current they are, and whether it knows when a source should not be used.</p>
+</section>
+
+<section id="collection-challenges">
+  <h2>The collection problem</h2>
+  <div class="triplet">
+    <div class="challenge">
+      <span class="tag">Scattered</span>
+      <h3>Knowledge lives in too many places</h3>
+      <p>Useful knowledge is spread across documents, tickets, chat, dashboards, and people. Each place has its own shape, its own permissions, and its own idea of what counts as "the answer." Pulling it together means dealing with silos, inconsistent naming, and conflicting versions of the same fact.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Tacit</span>
+      <h3>A lot of the useful knowledge is not written down</h3>
+      <p>The reason a team does something a certain way is often not in any doc. It is the accumulated judgment of people who have seen the edge cases. That knowledge is real and valuable, but it is also the knowledge most likely to vanish when someone leaves or changes roles.</p>
+    </div>
+    <div class="challenge">
+      <span class="tag">Conflicted</span>
+      <h3>The same fact has multiple versions</h3>
+      <p>When knowledge is scattered, it is also duplicated and contradicted. Two docs say different things. A wiki page disagrees with a runbook. A recent change was announced in chat but not propagated to the documentation. An agent that does not know which version to trust will pick one and act on it.</p>
+    </div>
+  </div>
+  <p>The collection problem is therefore not "ingest everything and hope." It is deciding what to collect, which source is authoritative for which kind of fact, and how to represent the result so that the agent can tell the difference between a well-supported fact and a guess.</p>
+</section>
+
+<section id="freshness">
+  <h2>Why freshness is the dominant enterprise problem</h2>
+  <p class="lead">Staleness is not a cosmetic issue. It is the way enterprise knowledge becomes wrong without anyone noticing.</p>
+  <p>Knowledge in an enterprise has a shelf life. Procedures change. Products ship. Access rules change. People leave and new people inherit responsibilities. A document that was correct when it was written can be wrong months later without any explicit edit, because the world around it changed.</p>
+  <p>This is why "last edited" is an incomplete freshness signal. A doc can be beautifully maintained and still be wrong because the thing it describes changed elsewhere. Research on knowledge management describes this as knowledge drift: the slow gap between what the documentation says and what is true now. The scary part is that drift is invisible until someone checks, and in an agentic system the agent is often the one doing the checking by acting on the knowledge.</p>
+  <p>Several forces make this worse:</p>
+  <ul>
+    <li><strong>Write velocity is up.</strong> Modern teams draft, decide, and ship faster than ever, so the underlying reality changes faster.</li>
+    <li><strong>Review velocity is flat.</strong> People review documents at roughly the speed they always did, so the gap between "changed" and "reviewed" widens.</li>
+    <li><strong>Ownership decays with turnover.</strong> When someone leaves, the doc they owned does not always get a new owner. The doc stays live; the accountability behind it weakens.</li>
+    <li><strong>Trust collapses quietly.</strong> Once the system has been wrong once from stale knowledge, people stop trusting it and fall back to asking colleagues. The knowledge base gets read less, so it gets updated less, so it drifts more.</li>
+  </ul>
+  <p>The agentic version of this problem is especially sharp. A stale document used to mislead one person at a time. Now it can be context for an agent that acts on it repeatedly. The model may look like the problem; the deeper issue is often the knowledge environment around it.</p>
+</section>
+
+<section id="what-disciplined-looks-like">
+  <h2>What disciplined enterprise knowledge looks like</h2>
+  <p>The goal is not a single perfect source of truth. That is usually unattainable at enterprise scale and, in practice, the attempt to build one often produces a large doc store that nobody trusts. The more realistic goal is a managed layer with enough structure to be usable.</p>
+  <ul>
+    <li><strong>Ownership.</strong> Every important piece of knowledge has an owner who is accountable for its accuracy and freshness, even if they are not the one who wrote it.</li>
+    <li><strong>Provenance.</strong> You can tell where a fact came from, which source is authoritative for which kind of fact, and whether a fact is direct knowledge or something inferred.</li>
+    <li><strong>Freshness signals.</strong> Freshness is not just a timestamp. It includes review cadence, upstream signals (a change in the system of record, a shipped feature, a policy update), and explicit flags when something is due for review.</li>
+    <li><strong>Explicit scope.</strong> Each piece of knowledge has a declared scope: what it applies to, what it does not apply to, and who is allowed to use it.</li>
+    <li><strong>A path for tacit knowledge.</strong> There is a mechanism for the knowledge in people's heads to become explicit when it matters, rather than relying on the hope that it will be written down in time.</li>
+  </ul>
+  <p>None of this is glamorous. It is closer to operations and ownership work than to model work. That is one reason it gets neglected, and one reason it is often the actual blocker for dependable agentic systems in enterprises.</p>
+</section>
+
+<section id="where-next-enterprise">
+  <h2>Where to go next</h2>
+  <p>This page is about the enterprise setting specifically. The rest of the site goes deeper in related directions:</p>
+  <ul>
+    <li><a href="/why-knowledge.html">Why Knowledge for Agentic AI</a> — the flagship argument for why knowledge matters at all.</li>
+    <li><a href="/context-engineering.html">Context Engineering</a> — how the knowledge gets delivered to the agent once you have it.</li>
+    <li><a href="/token-savings.html">Token Savings &amp; Grounding</a> — what happens when the agent acts on knowledge that is current and grounded rather than retrieved carelessly.</li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why is enterprise knowledge hard to collect for AI agents?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Enterprise knowledge is rarely in one clean place. It is distributed across documents, tickets, chat, operational tooling, and people's heads. A lot of it is tacit, outdated, duplicated, or buried in tools that were never designed to be a knowledge source. Collecting it is not a dump-and-index problem; it is a problem of finding what matters, deciding what counts, and giving it ownership.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does enterprise knowledge go stale so fast?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because companies change constantly. Procedures change, products ship, teams reorganize, access rules change, and people leave. Documentation rarely changes at the same speed. Research on knowledge management describes this as knowledge drift or expiring knowledge: information whose usefulness declines as conditions change, often without anyone noticing until it is used.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the risk of agents acting on stale enterprise knowledge?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>A stale document used to mislead one person at a time. When the same document becomes context for an agent, the mistake can be repeated at scale and at speed. The deeper risk is not that the agent is wrong once; it is that the system treats stale knowledge as current and acts on it confidently.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What does disciplined enterprise knowledge look like?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Not a single perfect source of truth. A managed layer with ownership, provenance, freshness signals, and a path for tacit knowledge to become explicit. The goal is not perfection; it is knowing what is current, what is owned, what is safe to use, and what needs review.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Managing expiring knowledge: Temporal dynamics of business information — describes expiring knowledge and four types of expiry (event triggered, continuous decay, context dependent, structural) and strategies for managing it. <a href="https://doi.org/10.1177/02663821261460766">doi.org/10.1177/02663821261460766</a></li>
+    <li>Knowledge drift: what it is and how to detect it automatically — describes drift as the gap between documentation and current reality, and the role of ownership and cross-source detection. <a href="https://slite.com/learn/knowledge-drift">slite.com/learn/knowledge-drift</a></li>
+    <li>Why knowledge bases fail — describes the contributor pyramid, orphan docs, and the failure mode where AI agents treat stale knowledge as context. <a href="https://slite.com/learn/why-knowledge-bases-fail">slite.com/learn/why-knowledge-bases-fail</a></li>
+    <li>Context decay is quietly killing your features before they go live — Thoughtworks piece on tacit knowledge and the forgetting curve in enterprise settings. <a href="https://www.thoughtworks.com/insights/blog/continuous-delivery/Context-decay-is-killing-your-features-before-they-go-live">thoughtworks.com</a></li>
+    <li>The Digital Personal Data Protection Act, 2023 — Indian statute referenced on the personal-assistant page; administered by the Ministry of Electronics and Information Technology. <a href="https://www.indiacode.nic.in/handle/123456789/22037">indiacode.nic.in</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.menu-toggle');
+  var nav=document.getElementById('nav-primary');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!open));
+      nav.classList.toggle('open',!open);
+    });
+  }
+  var faqs=document.querySelectorAll('.faq .q');
+  faqs.forEach(function(q){
+    var btn=q.querySelector('.open');
+    var a=q.nextElementSibling;
+    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
+    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
+    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
+  });
+})();
+</script>
+</body>
+</html>

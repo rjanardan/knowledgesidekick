@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Context Engineering — Knowledge Sidekick</title>
+<meta name="description" content="Context engineering is the practice of designing what an agent sees. Context windows are a knowledge-delivery problem: too little context and the agent is blind; too much and the signal gets buried and the cost climbs.">
+<link rel="canonical" href="https://knowledgesidekick.com/context-engineering.html">
+<meta property="og:title" content="Context Engineering — Knowledge Sidekick">
+<meta property="og:description" content="Context engineering is designing what an agent sees. Context windows are a knowledge-delivery problem, not a prompt-length problem.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://knowledgesidekick.com/context-engineering.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Context Engineering — Knowledge Sidekick">
+<meta name="twitter:description" content="Context windows are a knowledge-delivery problem. Design what the agent sees instead of hoping the model makes sense of it.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/context-engineering.html#article",
+      "headline": "Context Engineering",
+      "description": "Context windows are a knowledge-delivery problem. Context engineering is the practice of designing what an agent sees, in what order, and with what structure.",
+      "inLanguage": "en",
+      "author": {"@id": "https://knowledgesidekick.com/#person"},
+      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
+      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is context engineering?","acceptedAnswer":{"@type":"Answer","text":"Context engineering is the practice of deliberately designing what an agent sees in its context: which facts, which instructions, which examples, and in what order and structure. The point is that the context window is the agent's working knowledge for that turn, so what you put in it and how you arrange it strongly affects what the agent does."}},
+        {"@type":"Question","name":"Why is context a knowledge-delivery problem and not a prompt problem?","acceptedAnswer":{"@type":"Answer","text":"Because the context window is where the agent gets the knowledge it acts on for that turn. If the right knowledge is missing, buried, or arranged badly, the agent will reason over the wrong thing. Ordering, chunking, scoping, and prioritizing are knowledge problems: they determine which knowledge the agent actually has in front of it."}},
+        {"@type":"Question","name":"Is more context always better?","acceptedAnswer":{"@type":"Answer","text":"No. More context is not the same as better context. A longer context can bury the relevant fact, increase noise, and raise cost. The job is usually to get the right knowledge in front of the agent, not to fill the window. In many cases a smaller, better-chosen context outperforms a larger, less-curated one."}},
+        {"@type":"Question","name":"How does context engineering relate to the knowledge layer?","acceptedAnswer":{"@type":"Answer","text":"The knowledge layer is where the system knows what is true, current, owned, and allowed. Context engineering is how that knowledge is delivered to the agent for a given task. A strong knowledge layer gives you something worth putting in context. Context engineering is the discipline of putting the right slice of it in front of the agent at the right time."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-context">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="/favicon.svg#lamp"></use></svg>
+      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
+    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/why-knowledge.html">Why Knowledge</a>
+      <a href="/enterprise.html">Enterprise</a>
+      <a href="/personal-assistant.html">Personal Assistant</a>
+      <a href="/context-engineering.html" class="current">Context Engineering</a>
+      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Engineering discipline</span>
+    <h1>Context engineering: designing what the agent sees</h1>
+    <p class="lede">Context windows are a knowledge-delivery problem. The agent only knows what you put in front of it for this turn, in this order, with this structure. Context engineering is the discipline of choosing that slice deliberately instead of hoping the model makes sense of whatever you dump in.</p>
+    <p class="meta"><a href="/">Back to home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<section id="direct-answer-context">
+  <div class="callout">
+    <span class="label">Direct answer</span>
+    <h3>What is context engineering?</h3>
+    <p>Context engineering is the practice of deliberately designing what an agent sees in its context window: which facts, which instructions, which state, which examples, and in what order and structure. The context window is the agent's working knowledge for that turn, so the choice of what goes in it is a knowledge decision, not a formatting preference. Good context engineering tends to mean better behavior, lower cost, and fewer confident mistakes than "put everything in and hope."</p>
+  </div>
+</section>
+
+<section id="why-context-matters">
+  <h2>Why context is the place where knowledge meets action</h2>
+  <p class="lead">The model reasons. The context is what it reasons over.</p>
+  <p>For a given turn, an agent does not reach back into the entire universe of things it could know. It works with what is in its context: the prompt, the retrieved knowledge, the current state, the prior turns, the instructions, and the examples. That working set is the agent's reality for that decision.</p>
+  <p>This is why context is where the knowledge layer becomes practical. A knowledge system can be well-organized and still fail if the slice you hand the agent is wrong: missing the one fact that matters, burying it under ten pages of less relevant text, or presenting it in an order that leads the agent to focus on the wrong thing first.</p>
+  <p>Context engineering is the bridge between "we have knowledge" and "the agent can act on it for this task."</p>
+</section>
+
+<section id="the-context-flow-diagram">
+  <h2>A simple way to see it</h2>
+  <p>A useful mental model is a pipeline with four stages. Each stage is a place where knowledge can be improved or lost.</p>
+
+  <pre class="prose" style="background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow);overflow:auto;font-size:13px;line-height:1.55">Knowledge sources
+(corporate docs, tools, state, memory, user input)
+   |
+   v
+[ Select ]  ->  which knowledge is relevant for THIS task
+   |
+   v
+[ Shape ]   ->  ordering, chunking, summaries, structure
+   |
+   v
+[ Scope ]   ->  permissions, privacy, what is allowed in
+   |
+   v
+Context window  ->  what the agent actually sees this turn</pre>
+
+  <p>The four verbs are the point. <strong>Select</strong> is about relevance: not everything in the knowledge layer belongs in this turn's context. <strong>Shape</strong> is about presentation: how the knowledge is arranged so the agent can use it. <strong>Scope</strong> is about permission and privacy: what is allowed in, especially for personal or sensitive knowledge. The context window is the result, not the starting point.</p>
+</section>
+
+<section id="patterns">
+  <h2>Patterns worth knowing</h2>
+  <p class="lead">These are recurring ways teams engineer context. They are not a standard; they are common patterns worth recognizing.</p>
+
+  <div class="pattern">
+    <h3>Relevance-first retrieval</h3>
+    <p class="purpose">Put the most relevant knowledge in first, not all of it in random order.</p>
+    <dl>
+      <dt>Problem</dt><dd>A large body of knowledge is available, but most of it is irrelevant to this turn.</dd>
+      <dt>Pattern</dt><dd>Retrieve and rank by relevance, then place the most decision-relevant items nearest the point of use. Keep the rest out unless it is needed.</dd>
+      <dt>When</dt><dd>When the knowledge base is larger than the context you can afford and the task is focused.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Structured context layout</h3>
+    <p class="purpose">Arrange context into labeled parts so the agent can find what it needs.</p>
+    <dl>
+      <dt>Problem</dt><dd>A flat wall of text makes it easy for the agent to miss the one fact that matters.</dd>
+      <dt>Pattern</dt><dd>Separate instructions, current state, retrieved knowledge, and examples into clearly labeled sections. Use structure to signal importance, not just volume.</dd>
+      <dt>When</dt><dd>Whenever the context mixes different kinds of information.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Slicing by task, not by source</h3>
+    <p class="purpose">Build context around the task, not around where the knowledge happens to live.</p>
+    <dl>
+      <dt>Problem</dt><dd>Pulling "everything from the wiki" or "everything from the ticket system" produces too much of the wrong thing.</dd>
+      <dt>Pattern</dt><dd>Start from the task and decide what knowledge it needs, then pull from whichever source holds it. The source is secondary to the need.</dd>
+      <dt>When</dt><dd>When multiple sources are relevant and a source-first pull would be noisy.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Explicit scoping and redaction</h3>
+    <p class="purpose">Do not put knowledge into context unless the agent is allowed to see it for this task.</p>
+    <dl>
+      <dt>Problem</dt><dd>A retrieval system returns knowledge that is technically findable but not appropriate for this user, this agent, or this task.</dd>
+      <dt>Pattern</dt><dd>Apply permission and privacy scoping before content reaches the context window. Redact or exclude what should not be there, especially for personal or sensitive knowledge.</dd>
+      <dt>When</dt><dd>Whenever knowledge is sensitive, user-specific, or subject to access rules.</dd>
+    </dl>
+  </div>
+
+  <div class="pattern">
+    <h3>Context budgeting</h3>
+    <p class="purpose">Treat context as a budget, not a hobby.</p>
+    <dl>
+      <dt>Problem</dt><dd>Long contexts raise cost and can dilute signal, but teams often treat the window as something to fill.</dd>
+      <dt>Pattern</dt><dd>Decide what the task actually needs, measure the cost of what you include, and prefer the smaller context that still answers the task well.</dd>
+      <dt>When</dt><dd>Whenever cost, latency, or signal quality matter.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="anti-patterns">
+  <h2>Anti-patterns</h2>
+  <ul>
+    <li><strong>Dump everything and pray.</strong> If you put all available knowledge in, the relevant fact is still there, but it is harder to use and more expensive to process.</li>
+    <li><strong>Context as storage.</strong> The context window is not the place to keep knowledge for later. It is the place to present the knowledge needed now. Long-term knowledge belongs in the knowledge layer, not in the prompt.</li>
+    <li><strong>Ordering as an afterthought.</strong> The order in which knowledge arrives matters. Leading with the wrong thing can set the agent's attention in the wrong direction.</li>
+    <li><strong>Ignoring scope until it is a problem.</strong> Permission and privacy scoping added late is usually awkward. Scoping is a design decision, not a patch.</li>
+  </ul>
+</section>
+
+<section id="where-next-context">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/why-knowledge.html">Why Knowledge for Agentic AI</a> — why knowledge matters at all, which is why context engineering has anything to deliver.</li>
+    <li><a href="/token-savings.html">Token Savings &amp; Grounding</a> — the cost and trust side of delivering the right context, and why grounding is closely related.</li>
+    <li><a href="/enterprise.html">Knowledge in Enterprise Context</a> — the enterprise version of the "what knowledge do we even have" problem that precedes context engineering.</li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is context engineering?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Context engineering is the practice of deliberately designing what an agent sees in its context: which facts, which instructions, which state, which examples, and in what order and structure. The context window is the agent's working knowledge for that turn, so the choice of what goes in it is a knowledge decision, not a formatting preference.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why is context a knowledge-delivery problem and not a prompt problem?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because the context window is where the agent gets the knowledge it acts on for that turn. If the right knowledge is missing, buried, or arranged badly, the agent will reason over the wrong thing. Ordering, chunking, scoping, and prioritizing are knowledge problems: they determine which knowledge the agent actually has in front of it.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Is more context always better?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>No. More context is not the same as better context. A longer context can bury the relevant fact, increase noise, and raise cost. The job is usually to get the right knowledge in front of the agent, not to fill the window. In many cases a smaller, better-chosen context outperforms a larger, less-curated one.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does context engineering relate to the knowledge layer?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>The knowledge layer is where the system knows what is true, current, owned, and allowed. Context engineering is how that knowledge is delivered to the agent for a given task. A strong knowledge layer gives you something worth putting in context. Context engineering is the discipline of putting the right slice of it in front of the agent at the right time.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — surveys retrieval, generation, and augmentation in RA-LLMs, including iterative and adaptive retrieval patterns relevant to context construction. <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+    <li>Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs — discusses the tradeoff between retrieval depth, token cost, and quality, which is the cost face of context engineering. <a href="https://arxiv.org/abs/2606.02581">arxiv.org/abs/2606.02581</a></li>
+    <li>Cost-Aware Retrieval-Augmentation Reasoning Models with Adaptive Retrieval Depth — discusses token latency and the cost of generated vs. retrieved tokens in retrieval-augmented reasoning. <a href="https://arxiv.org/abs/2510.15719">arxiv.org/abs/2510.15719</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.menu-toggle');
+  var nav=document.getElementById('nav-primary');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!open));
+      nav.classList.toggle('open',!open);
+    });
+  }
+  var faqs=document.querySelectorAll('.faq .q');
+  faqs.forEach(function(q){
+    var btn=q.querySelector('.open');
+    var a=q.nextElementSibling;
+    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
+    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
+    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
+    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
+  });
+})();
+</script>
+</body>
+</html>
