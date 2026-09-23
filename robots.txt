@@ -1,7 +1,4 @@
 # https://knowledgesidekick.com/robots.txt
-# Allow the major AI and search crawlers so the site can be cited and indexed.
-# This is a small static site; there is nothing to hide.
-
 User-agent: *
 Allow: /
 
