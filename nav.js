@@ -113,7 +113,6 @@
     const id = 'nav-dropdown-' + group.label.replace(/\s+/g, '-');
     let rows = '';
     group.items.forEach((it, i) => {
-      if (i > 0 && i % 5 === 0) rows += '<div class="sep" role="presentation"></div>';
       const target = it.target || '';
       const ext = it.local === false ? ' nav-ext' : '';
       const tAttr = target ? ` target="${escAttr(target)}" rel="noopener"` : '';
@@ -131,7 +130,6 @@
     NAV.groups.forEach(g => {
       html += `<div class="nav-group">${navToggleHTML(g)}${dropdownHTML(g)}</div>`;
     });
-    html += `<a class="nav-cta" href="/contact.html">Contact<span class="arr" aria-hidden="true">→</span></a>`;
     nav.innerHTML = html;
 
     // ---- mobile open/close ----

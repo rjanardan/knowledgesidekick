@@ -100,16 +100,8 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 }
 .nav-dropdown a{display:block;padding:7px 11px;border-radius:0;font-size:14px;color:var(--ink);text-decoration:none}
 .nav-dropdown a:hover{background:var(--panel-2);text-decoration:none;color:var(--accent-ink)}
-.nav-dropdown .sep{height:1px;background:var(--line);margin:4px 6px}
 .nav-dropdown .grp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 12px 2px;font-weight:600}
 .nav-ext{font-size:12px;color:var(--muted);padding:4px 12px 8px}
-.nav-cta{
-  display:inline-flex;align-items:center;
-  background:var(--ink);color:#fff;padding:8px 13px;border-radius:8px;
-  font-size:13.5px;font-weight:550;text-decoration:none;
-}
-.nav-cta:hover{background:#000;text-decoration:none}
-.nav-cta .arr{margin-left:6px;color:#cdd0d5}
 
 .menu-toggle{
   display:none;background:transparent;border:1px solid var(--line-2);
@@ -130,8 +122,6 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
     position:static;opacity:1;visibility:visible;transform:none;
     box-shadow:none;border:none;background:transparent;padding:0 0 4px;max-width:none}
   .nav-dropdown a{display:flex;justify-content:space-between;padding:7px 2px;border-radius:0}
-  .nav-dropdown .sep{display:none}
-  .nav-cta{display:block;width:100%;justify-content:center;margin-top:8px;border:1px solid var(--ink)}
   .menu-toggle{display:inline-flex}
   .menu-toggle[aria-expanded="true"]{background:var(--panel-2)}
   .site-bar{padding:0 16px}
