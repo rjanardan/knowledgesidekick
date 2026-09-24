@@ -13,7 +13,7 @@
     groups: [
       {
         label: 'Agents',
-        open: true,
+        open: false,
         items: [
           { label: 'Agents',           href: '/agents.html',              local: true },
           { label: 'LLMs',             href: '/llms.html',                local: true },
@@ -24,7 +24,7 @@
       },
       {
         label: 'Enterprise',
-        open: true,
+        open: false,
         items: [
           { label: 'Agentic AI',         href: '/enterprise-agentic-ai.html',  local: true },
           { label: 'A2A Communication',  href: '/a2a-communication.html',      local: true },

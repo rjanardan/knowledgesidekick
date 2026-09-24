@@ -61,10 +61,10 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 .skip:focus{left:0}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.9);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
 .site-bar{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto;padding:0 24px;height:62px}
-.ks-badge{display:inline-block;color:var(--ks-color,#2563eb);vertical-align:middle;transition:color .15s}
+.ks-badge{display:inline-block;color:var(--ks-color,#2563eb);vertical-align:middle;transition:color .15s;width:40px;height:40px;flex-shrink:0}
 .ks-badge:hover{color:var(--accent-ink)}
 .ks-badge text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-.ks-badge{width:40px;height:40px;flex-shrink:0}
+/* (width/height merged into the rule below) */
 .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .brand-text{display:flex;flex-direction:column;line-height:1.1;gap:5px;white-space:nowrap}
 .brand-text b{font-size:18px;font-weight:650;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
@@ -81,8 +81,8 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 }
 .nav-toggle:hover{background:var(--panel-2);text-decoration:none;color:var(--ink)}
 .nav-toggle[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent)}
-.nav-toggle .arrow{font-size:10px;transition:transform .15s;display:inline-block}
-.nav-toggle[aria-expanded="true"] .arrow{transform:rotate(180deg)}
+.nav-toggle .arrow{font-size:10px;display:inline-block}
+/* arrow always points down — menu opens downward */
 .nav-dropdown{
   position:absolute;top:calc(100% + 6px);left:0;
   min-width:230px;max-width:290px;
@@ -140,6 +140,7 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 }
 @media (max-width:640px){
   .site-bar{gap:10px;padding:0 12px}
+  .ks-badge{width:36px;height:36px}
   .brand-text b{font-size:16px}
   .nav-toggle{padding:7px 10px;font-size:13.5px}
 }
