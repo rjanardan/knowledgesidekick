@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grounding — Knowledge Sidekick</title>
+<meta name="description" content="Grounding for agentic systems: why claims need to be tied back to knowledge, and what that means in practice.">
+<link rel="canonical" href="https://knowledgesidekick.com/grounding.html">
+<meta property="og:title" content="Grounding — Knowledge Sidekick">
+<meta property="og:description" content="Grounding for agentic systems: why claims need to be tied back to knowledge, and what that means in practice.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/grounding.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Grounding — Knowledge Sidekick">
+<meta name="twitter:description" content="Grounding for agentic systems: why claims need to be tied back to knowledge, and what that means in practice.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/contact.html",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-enterprise">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <img class="ks-badge" src="logo.svg" alt="Knowledge Sidekick" width="38" height="38">
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+<article class="article">
+  <h1>Grounding</h1>
+  <p>Grounding is the act of tying what an agent says or does back to knowledge it can point to. A grounded answer is not merely a plausible one; it is one that can be associated with a source, a record, or a fact the system is willing to stand behind. In practice, grounding is the difference between an agent that sounds confident and an agent that can show its work.</p>
+  <p>This matters because agents are persuasive by default. A fluent answer can be wrong in ways that are hard to catch on the spot, especially when the question touches something the agent has not actually seen. Grounding is one of the main defenses against that gap: if the agent has to attach its statement to knowledge, then the statement becomes verifiable instead of merely articulate.</p>
+
+  <h2 id="what-grounding-is">What grounding is, in plain terms</h2>
+  <p>In this context, grounding means the agent's output is connected to underlying knowledge in a way that can be checked. That connection can be explicit — a cited document, a record ID, a passage from a known source — or it can be implicit but traceable, so that a reviewer can ask "what were you relying on?" and get a meaningful answer rather than a hand-wavy one.</p>
+  <p>Grounding is not the same as retrieval. Retrieval brings knowledge into reach; grounding is the discipline of making sure the agent's claim actually rests on that knowledge, and is not just adjacent to it. A system can retrieve a lot and still say things that are not well grounded if it is not careful about what it asserts and why.</p>
+
+  <h2 id="why-it-matters">Why it matters for agentic systems</h2>
+  <p>Agents act. That is what makes them useful, and it is what makes grounding important. A chatbot that gives a slightly wrong answer is one kind of problem; an agent that takes a step, sends a message, updates a record, or makes a decision on the basis of a confident but ungrounded claim is a different and more serious kind.</p>
+  <p>Grounding reduces the chance that an agent's action rests on a guess presented as a fact. It also makes review easier: when something goes wrong, a grounded system gives you a place to look. Without grounding, errors are harder to diagnose because the agent can always claim it was just being helpful.</p>
+
+  <h2 id="how-it-fits-the-knowledge-layer">How grounding fits the knowledge layer</h2>
+  <p>Grounding cannot be bolted on cleanly if the knowledge underneath is itself weak. If the knowledge is stale, fragmented, unowned, or poorly represented, then even a well-meaning grounding step will point the agent at the wrong thing. Grounding is therefore downstream of the knowledge lifecycle: it depends on knowledge that is current enough, findable, and attributable.</p>
+  <p>At the same time, grounding pushes back on the knowledge layer. If an agent needs to ground its claims, the knowledge layer has to make sources and freshness legible, not just contain facts. That is one reason knowledge representation and provenance matter: they are not abstract concerns, but the conditions under which grounding is possible.</p>
+
+  <h2 id="what-good-grounding-looks-like">What good grounding looks like</h2>
+  <ul>
+    <li><strong>Tied to a source.</strong> The agent can associate its claim with something specific, even if the user does not always see the full citation.</li>
+    <li><strong>Honest about gaps.</strong> When the knowledge is insufficient, the agent says so instead of inflating a weak signal into a confident statement.</li>
+    <li><strong>Traceable.</strong> Someone reviewing the output can ask what knowledge supported it and get a meaningful answer.</li>
+    <li><strong>Scoped correctly.</strong> Grounding uses the knowledge the agent is allowed to use for this task, not just anything it can reach.</li>
+    <li><strong>Consistent with freshness.</strong> The agent grounds its claims in knowledge that is current enough for the decision at hand.</li>
+  </ul>
+
+  <div class="faq">
+    <div>
+      <dt>What is grounding, in simple terms?</dt>
+      <dd>Grounding is the act of tying an agent's claims or actions back to knowledge it can point to. A grounded statement is one that can be checked against a source, record, or fact, rather than one that is merely plausible or well-phrased.</dd>
+    </div>
+    <div>
+      <dt>Is grounding the same as retrieval?</dt>
+      <dd>No. Retrieval brings knowledge into reach. Grounding is making sure the agent's claim actually rests on that knowledge. A system can retrieve a lot and still be poorly grounded if it is not careful about what it asserts and why.</dd>
+    </div>
+    <div>
+      <dt>Why does grounding matter more for agents than for simple answers?</dt>
+      <dd>Because agents act. When an agent sends a message, updates a record, or makes a decision, a confident but ungrounded claim becomes more costly than a wrong answer in a chat. Grounding is one of the main ways to reduce that risk.</dd>
+    </div>
+    <div>
+      <dt>Does grounding fix a weak knowledge layer?</dt>
+      <dd>No. Grounding depends on good knowledge underneath. If the knowledge is stale, fragmented, unowned, or poorly represented, grounding will point the agent at the wrong thing. Grounding is downstream of the knowledge lifecycle, not a substitute for it.</dd>
+    </div>
+  </div>
+
+  <div class="faq-json-ld" style="display:none">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is grounding, in simple terms?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Grounding is the act of tying an agent's claims or actions back to knowledge it can point to. A grounded statement is one that can be checked against a source, record, or fact, rather than one that is merely plausible or well-phrased." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is grounding the same as retrieval?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Retrieval brings knowledge into reach. Grounding is making sure the agent's claim actually rests on that knowledge. A system can retrieve a lot and still be poorly grounded if it is not careful about what it asserts and why." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does grounding matter more for agents than for simple answers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Because agents act. When an agent sends a message, updates a record, or makes a decision, a confident but ungrounded claim becomes more costly than a wrong answer in a chat. Grounding is one of the main ways to reduce that risk." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does grounding fix a weak knowledge layer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Grounding depends on good knowledge underneath. If the knowledge is stale, fragmented, unowned, or poorly represented, grounding will point the agent at the wrong thing. Grounding is downstream of the knowledge lifecycle, not a substitute for it." }
+      }
+    ]
+  }
+  </script>
+  </div>
+</article>
+
+<nav class="pagelinks" aria-label="Page">
+  <div><strong>This page:</strong> Grounding — why agent claims need to be tied back to knowledge.</div>
+  <div>
+    <span>Related:</span>
+    <a href="token-savings.html">Token Savings</a> ·
+    <a href="context-engineering.html">Context Engineering</a> ·
+    <a href="knowledge-lifecycle.html">Knowledge Lifecycle</a>
+  </div>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

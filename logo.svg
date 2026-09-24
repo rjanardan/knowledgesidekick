@@ -1,15 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" role="img" aria-label="Knowledge Sidekick">
-  <defs>
-    <style>
-      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-    </style>
-  </defs>
-  <!-- KS badge -->
-  <rect x="4" y="8" width="92" height="92" rx="20" fill="#2563eb"/>
-  <text x="50" y="54" text-anchor="middle" dominant-baseline="central" font-size="48" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text>
-  <circle cx="78" cy="20" r="5" fill="#ffffff"/>
-  <!-- Wordmark: Knowledge (bold) -->
-  <text x="112" y="34" dominant-baseline="central" font-size="44" font-weight="650" fill="#1c1a17">Knowledge</text>
-  <!-- Wordmark: Sidekick (regular, muted) -->
-  <text x="112" y="78" dominant-baseline="central" font-size="44" font-weight="400" fill="#5b574f">Sidekick</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" role="img" aria-label="Knowledge Sidekick">
+  <!-- square, color controlled by CSS currentColor on the <img> -->
+  <rect x="1" y="1" width="52" height="52" rx="11" fill="currentColor"/>
+  <!-- KS letters: always white on the colored square -->
+  <text x="27" y="34" text-anchor="middle" dominant-baseline="central"
+        font-size="26" font-weight="700" fill="#ffffff" letter-spacing="-1.5">KS</text>
 </svg>
