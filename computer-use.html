@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Use — Knowledge Sidekick</title>
+<meta name="description" content="Computer use is the layer where an agent acts on a computer environment — UI, desktop, browser, or OS-level actions. This page explains what computer use is, why it raises the stakes for knowledge and guardrails, and how it fits in the agents stack.">
+<link rel="canonical" href="https://knowledgesidekick.com/computer-use.html">
+<meta property="og:title" content="Computer Use — Knowledge Sidekick">
+<meta property="og:description" content="Computer use is the layer where an agent acts on a computer environment — UI, desktop, browser, OS-level actions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/computer-use.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Computer Use — Knowledge Sidekick">
+<meta name="twitter:description" content="Computer use is the layer where an agent acts on a computer environment.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/computer-use.html#article",
+      "headline": "Computer Use",
+      "description": "Computer use is the layer where an agent acts on a computer environment — UI, desktop, browser, OS-level actions.",
+      "inLanguage": "en",
+      "author": { "@id": "https://knowledgesidekick.com/#person" },
+      "publisher": { "@id": "https://knowledgesidekick.com/#website" },
+      "isPartOf": { "@id": "https://knowledgesidekick.com/#website" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is computer use in an agentic system?", "acceptedAnswer": { "@type": "Answer", "text": "Computer use is the layer where an agent acts on a computer environment — clicking, typing, navigating UIs, operating desktop or browser applications, and performing OS-level tasks. It is a form of tool use where the tool is the computer itself." } },
+        { "@type": "Question", "name": "Why does computer use raise the stakes for knowledge and guardrails?", "acceptedAnswer": { "@type": "Answer", "text": "Because computer use can act directly on the user's environment — files, applications, records, UI states — often with broad access. That makes knowledge, permissions, and guardrails especially important: the agent is no longer only generating text, it is operating in a real environment." } },
+        { "@type": "Question", "name": "How does computer use fit in the agents stack?", "acceptedAnswer": { "@type": "Answer", "text": "Computer use is a form of tool use at the UI/computer level. The stack is: LLMs reason, agents loop and decide, tools and interfaces like MCP expose capabilities, tool use is the action layer, and computer use is the action layer when the target is the computer environment." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-computer-use">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">UI / computer-level action</span>
+    <h1>Computer use: acting on the computer environment</h1>
+    <p class="lede">Computer use is the layer where an agent acts on a computer — UI, desktop, browser, or OS-level actions. It is a form of tool use where the tool is the computer itself. This page explains what computer use is, why it raises the stakes for knowledge and guardrails, and how it fits in the agents stack.</p>
+    <p class="meta"><a href="/">Home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<div class="callout">
+  <span class="label">Direct answer</span>
+  <h3>What is computer use in an agentic system?</h3>
+  <p>Computer use is the layer where an agent acts on a computer environment — clicking, typing, navigating UIs, operating desktop or browser applications, and performing OS-level tasks. It is a form of tool use where the tool is the computer itself.</p>
+</div>
+
+<section id="computer-use-defaults">
+  <h2>Computer use as action at the UI level</h2>
+  <p class="lead">Some actions cannot be done through a clean API. Sometimes the target is a UI, a desktop app, a browser, or an environment with no good programmatic interface.</p>
+  <p>Computer use is how an agent acts in those environments: navigating screens, reading UI state, clicking, typing, and operating within the computer as a human would. It is one of the most powerful forms of tool use because it can reach places that APIs do not expose cleanly.</p>
+  <p>That power is also what makes it risky. A computer-using agent can act on the user's environment directly, which means knowledge, permissions, and guardrails matter more than in a narrow API call.</p>
+</section>
+
+<section id="computer-use-knowledge">
+  <h2>Why computer use depends on knowledge</h2>
+  <ul>
+    <li><strong>UI state is knowledge.</strong> What is on screen, what is enabled, what changed — that is knowledge the agent must read and act on.</li>
+    <li><strong>Procedures are knowledge.</strong> Many computer tasks follow procedures: which app to open, which menu to use, what sequence of actions is correct. That is procedural knowledge.</li>
+    <li><strong>Permissions are knowledge.</strong> A computer-using agent often operates with significant access. It needs to know what it is allowed to do, on whose behalf, and under what constraints.</li>
+    <li><strong>Errors are expensive.</strong> A wrong click or action in a computer environment can be more consequential than a wrong sentence. Knowledge and guardrails reduce that risk.</li>
+  </ul>
+  <p>In other words, computer use is not just an interface problem. It is a knowledge problem at the action layer.</p>
+</section>
+
+<section id="computer-use-stack">
+  <h2>Where computer use fits in the stack</h2>
+  <p>In the agents stack on this site, computer use is the action layer at the UI/computer level:</p>
+  <ul>
+    <li><strong>LLMs</strong> — the reasoning core.</li>
+    <li><strong>Agents</strong> — the loop that reasons, decides, and continues.</li>
+    <li><strong>MCP</strong> — one standard interface for tools and context.</li>
+    <li><strong>Tool use</strong> — the action layer generally.</li>
+    <li><strong>Computer use</strong> — tool use at the computer/UI level.</li>
+  </ul>
+  <p>Computer use is valuable because it extends what an agent can do. It is risky because it expands the blast radius of bad knowledge and weak guardrails. Good computer-use systems pair action with strong knowledge and clear constraints.</p>
+</section>
+
+<section id="where-next-computer-use">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/agents.html">Agents</a> — the capability layer.</li>
+    <li><a href="/llms.html">LLMs</a> — the reasoning core.</li>
+    <li><a href="/mcp.html">MCP</a> — a standard tool/context interface.</li>
+    <li><a href="/tool-use.html">Tool use</a> — the action layer generally.</li>
+    <li><a href="/enterprise.html">Knowledge Lifecycle</a> — the knowledge behind the actions.</li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is computer use in an agentic system?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Computer use is the layer where an agent acts on a computer environment — clicking, typing, navigating UIs, operating desktop or browser applications, and performing OS-level tasks. It is a form of tool use where the tool is the computer itself.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does computer use raise the stakes for knowledge and guardrails?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because computer use can act directly on the user's environment — files, applications, records, UI states — often with broad access. That makes knowledge, permissions, and guardrails especially important: the agent is no longer only generating text, it is operating in a real environment.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does computer use fit in the agents stack?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Computer use is a form of tool use at the UI/computer level. The stack is: LLMs reason, agents loop and decide, tools and interfaces like MCP expose capabilities, tool use is the action layer, and computer use is the action layer when the target is the computer environment.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

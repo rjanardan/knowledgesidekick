@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tool Use — Knowledge Sidekick</title>
+<meta name="description" content="Tool use is the action layer of an agentic system: the actual things an agent does with external capabilities. This page explains what tool use is, why it matters, and how it relates to knowledge, MCP, and computer use.">
+<link rel="canonical" href="https://knowledgesidekick.com/tool-use.html">
+<meta property="og:title" content="Tool Use — Knowledge Sidekick">
+<meta property="og:description" content="Tool use is the action layer of an agentic system — the things an agent does with external capabilities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/tool-use.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tool Use — Knowledge Sidekick">
+<meta name="twitter:description" content="Tool use is the action layer of an agentic system.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/tool-use.html#article",
+      "headline": "Tool Use",
+      "description": "Tool use is the action layer of an agentic system — the things an agent does with external capabilities.",
+      "inLanguage": "en",
+      "author": { "@id": "https://knowledgesidekick.com/#person" },
+      "publisher": { "@id": "https://knowledgesidekick.com/#website" },
+      "isPartOf": { "@id": "https://knowledgesidekick.com/#website" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is tool use in an agentic system?", "acceptedAnswer": { "@type": "Answer", "text": "Tool use is the action layer: the actual capabilities an agent uses to do things — calling an API, querying a database, sending a message, updating a record, or acting on a computer. Tool use is how an agent moves from reasoning to doing." } },
+        { "@type": "Question", "name": "Why does tool use depend on knowledge?", "acceptedAnswer": { "@type": "Answer", "text": "Because to use a tool correctly, the agent needs to know what the tool does, what it expects, what state it operates on, and what it is allowed to do with it. Tool use without knowledge is just action without dependable context." } },
+        { "@type": "Question", "name": "How is tool use related to MCP and computer use?", "acceptedAnswer": { "@type": "Answer", "text": "MCP is one standard interface for exposing tools and context to an agent. Tool use is the action itself. Computer use is a special case of tool use where the tool is the computer or UI. Together they form the action layer of the agents stack." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-tool-use">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Action layer</span>
+    <h1>Tool use: the action layer of an agentic system</h1>
+    <p class="lede">Tool use is how an agent moves from reasoning to doing. It is the layer where the system actually calls APIs, queries data, sends messages, updates records, or acts on a computer. This page explains what tool use is, why it depends on knowledge, and how it relates to MCP and computer use.</p>
+    <p class="meta"><a href="/">Home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<div class="callout">
+  <span class="label">Direct answer</span>
+  <h3>What is tool use in an agentic system?</h3>
+  <p>Tool use is the action layer: the actual capabilities an agent uses to do things — calling an API, querying a database, sending a message, updating a record, or acting on a computer. Tool use is how an agent moves from reasoning about what to do to actually doing it.</p>
+</div>
+
+<section id="tool-use-defaults">
+  <h2>Tool use as the action layer</h2>
+  <p class="lead">An agent that can reason but not act is limited. Tool use is what expands it.</p>
+  <p>In an agentic system, tool use is where the agent's decisions become real actions. The agent reasons about what to do, selects or constructs a tool call, and the tool does the work. That work might be querying a system of record, calling an API, updating a record, sending something, or acting inside a computer environment.</p>
+  <p>Tool use is not a minor detail. It is where a lot of the knowledge requirements show up: the agent needs to know what the tool expects, what state it operates on, what it is allowed to do, and what counts as a correct result. Without that knowledge, tool use becomes confident action on bad context.</p>
+</section>
+
+<section id="knowledge-tool-use">
+  <h2>Why tool use depends on knowledge</h2>
+  <ul>
+    <li><strong>Tool contract.</strong> The agent needs to know what the tool does, what inputs it expects, and what outputs it returns. That is knowledge about the tool.</li>
+    <li><strong>State.</strong> Many tools operate on real state — current records, current approvals, current inventory. The agent needs current knowledge of that state, not stale snapshots.</li>
+    <li><strong>Permissions and scope.</strong> The agent needs to know what it is allowed to do with each tool, on whose behalf, and under what constraints.</li>
+    <li><strong>Correctness.</strong> A tool call can be technically valid and still wrong — the wrong tool, the wrong input, the wrong target. Knowledge is what reduces that gap.</li>
+  </ul>
+  <p>This is why tool use and the knowledge layer are tightly linked. The tools are the actions; the knowledge is what makes those actions sensible.</p>
+</section>
+
+<section id="mcp-computer-use">
+  <h2>Relationships: MCP, tool use, computer use</h2>
+  <p>These three sit together in the action/interface layer of the agents stack:</p>
+  <ul>
+    <li><strong>MCP</strong> — one standard interface for exposing tools and context to a model or agent.</li>
+    <li><strong>Tool use</strong> — the action itself: the things the agent does via tools.</li>
+    <li><strong>Computer use</strong> — a special case of tool use where the tool is the computer or UI.</li>
+  </ul>
+  <p>You can think of MCP as a way to expose tools, tool use as the actions, and computer use as the action type when the target is a computer environment. None of them replaces the knowledge layer; all of them depend on it.</p>
+</section>
+
+<section id="where-next-tool-use">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/agents.html">Agents</a> — the capability layer.</li>
+    <li><a href="/llms.html">LLMs</a> — the reasoning core.</li>
+    <li><a href="/mcp.html">MCP</a> — a standard tool/context interface.</li>
+    <li><a href="/computer-use.html">Computer use</a> — UI-level action.</li>
+    <li><a href="/enterprise.html">Knowledge Lifecycle</a> — the knowledge behind the tools.</li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is tool use in an agentic system?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Tool use is the action layer: the actual capabilities an agent uses to do things — calling an API, querying a database, sending a message, updating a record, or acting on a computer. Tool use is how an agent moves from reasoning about what to do to actually doing it.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does tool use depend on knowledge?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because to use a tool correctly, the agent needs to know what the tool does, what it expects, what state it operates on, and what it is allowed to do with it. Tool use without knowledge is just action without dependable context.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How is tool use related to MCP and computer use?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>MCP is one standard interface for exposing tools and context to an agent. Tool use is the action itself. Computer use is a special case of tool use where the tool is the computer or UI. Together they form the action layer of the agents stack.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

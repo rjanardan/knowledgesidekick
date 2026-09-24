@@ -3,68 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Why Knowledge for Agentic AI — Knowledge Sidekick</title>
-<meta name="description" content="Why does knowledge matter for AI agents? Because agents act on what they know. This page defines the knowledge layer in agentic systems and why it fails first.">
-<link rel="canonical" href="https://knowledgesidekick.com/why-knowledge.html">
-<meta property="og:title" content="Why Knowledge for Agentic AI — Knowledge Sidekick">
-<meta property="og:description" content="Agents act on what they know. The knowledge layer is the cross-cutting part of agentic systems that fails first when it is neglected.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://knowledgesidekick.com/why-knowledge.html">
+<title>Why Knowledge — Knowledge Sidekick</title>
+<meta name="description" content="Why does knowledge matter for agentic AI, LLMs, and personal assistants? Because these systems act on what they know.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
+<meta property="og:title" content="Why Knowledge — Knowledge Sidekick">
+<meta property="og:description" content="Why does knowledge matter for agentic AI, LLMs, and personal assistants? Because these systems act on what they know.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/">
 <meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Why Knowledge for Agentic AI — Knowledge Sidekick">
-<meta name="twitter:description" content="Agents act on what they know. The knowledge layer is the cross-cutting part of agentic systems that fails first when it is neglected.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:title" content="Why Knowledge — Knowledge Sidekick">
+<meta name="twitter:description" content="Why does knowledge matter for agentic AI, LLMs, and personal assistants? Because these systems act on what they know.">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
-      "@id": "https://knowledgesidekick.com/why-knowledge.html#article",
-      "headline": "Why Knowledge for Agentic AI",
-      "description": "Agents act on what they know. The knowledge layer is the cross-cutting part of agentic systems that fails first when it is neglected.",
-      "inLanguage": "en",
-      "author": {"@id": "https://knowledgesidekick.com/#person"},
-      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
-      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Why does knowledge matter more for agents than for a chatbot?","acceptedAnswer":{"@type":"Answer","text":"A chatbot mostly answers. An agent plans, calls tools, reads and writes data, and acts over time. That means a knowledge mistake is no longer a wrong sentence; it is a wrong action, a wrong record, or a wrong decision carried forward. Agents make knowledge failures more expensive because they act on what they believe."}},
-        {"@type":"Question","name":"What does this site mean by knowledge in an agentic system?","acceptedAnswer":{"@type":"Answer","text":"Knowledge here means any information the agent relies on to decide, act, or explain itself: facts, procedures, policies, current state, tool contracts, user permissions, and the relationships between them. It is broader than a document store and narrower than the model's training data. It is the stuff the agent should be able to point to when it acts."}},
-        {"@type":"Question","name":"Is the knowledge layer a vector database?","acceptedAnswer":{"@type":"Answer","text":"Sometimes a vector index is part of it, but it is not the whole thing. A vector index is good for similarity search over text. It is not, by itself, a source of truth about what is current, who owns a fact, what a tool expects, or what the system is allowed to do. The knowledge layer includes representation, ownership, freshness, permissions, and grounding, not just retrieval."}},
-        {"@type":"Question","name":"Does better knowledge replace a better model?","acceptedAnswer":{"@type":"Answer","text":"No. Better knowledge and a better model are not substitutes. A stronger model with weak knowledge still acts on bad information. A weaker model with strong, current, well-scoped knowledge can be more dependable in the situations that matter. The two are complementary: the model reasons, the knowledge layer tells it what to reason over."}}
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
       ]
     }
   ]
 }
 </script>
 </head>
-<body class="page-why-knowledge">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-bar">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="favicon.svg#lamp"></use></svg>
-      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
-    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/why-knowledge.html" class="current">Why Knowledge</a>
-      <a href="/enterprise.html">Enterprise</a>
-      <a href="/personal-assistant.html">Personal Assistant</a>
-      <a href="/context-engineering.html">Context Engineering</a>
-      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
   </div>
 </header>
-
 <main id="main">
+
 <section class="hero">
   <div class="wrap">
     <span class="kicker">Flagship argument</span>
@@ -173,46 +167,12 @@
 </div>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div>Knowledge Sidekick — knowledge for agentic AI.</div>
-    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var toggle=document.querySelector('.menu-toggle');
-  var nav=document.getElementById('nav-primary');
-  if(toggle&&nav){
-    toggle.addEventListener('click',function(){
-      var open=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!open));
-      nav.classList.toggle('open',!open);
-    });
-  }
-  var faqs=document.querySelectorAll('.faq .q');
-  faqs.forEach(function(q){
-    var btn=q.querySelector('.open');
-    var a=q.nextElementSibling;
-    function openIt(){
-      q.setAttribute('aria-expanded','true');
-      btn.setAttribute('aria-expanded','true');
-      btn.textContent='Hide';
-      a.classList.add('open');
-    }
-    function closeIt(){
-      q.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-expanded','false');
-      btn.textContent='Show';
-      a.classList.remove('open');
-    }
-    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
-  });
-})();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

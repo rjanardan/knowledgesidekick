@@ -4,67 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Context Engineering — Knowledge Sidekick</title>
-<meta name="description" content="Context engineering is the practice of designing what an agent sees. Context windows are a knowledge-delivery problem: too little context and the agent is blind; too much and the signal gets buried and the cost climbs.">
-<link rel="canonical" href="https://knowledgesidekick.com/context-engineering.html">
+<meta name="description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
 <meta property="og:title" content="Context Engineering — Knowledge Sidekick">
-<meta property="og:description" content="Context engineering is designing what an agent sees. Context windows are a knowledge-delivery problem, not a prompt-length problem.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://knowledgesidekick.com/context-engineering.html">
+<meta property="og:description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/">
 <meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Context Engineering — Knowledge Sidekick">
-<meta name="twitter:description" content="Context windows are a knowledge-delivery problem. Design what the agent sees instead of hoping the model makes sense of it.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
-      "@id": "https://knowledgesidekick.com/context-engineering.html#article",
-      "headline": "Context Engineering",
-      "description": "Context windows are a knowledge-delivery problem. Context engineering is the practice of designing what an agent sees, in what order, and with what structure.",
-      "inLanguage": "en",
-      "author": {"@id": "https://knowledgesidekick.com/#person"},
-      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
-      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"What is context engineering?","acceptedAnswer":{"@type":"Answer","text":"Context engineering is the practice of deliberately designing what an agent sees in its context: which facts, which instructions, which examples, and in what order and structure. The point is that the context window is the agent's working knowledge for that turn, so what you put in it and how you arrange it strongly affects what the agent does."}},
-        {"@type":"Question","name":"Why is context a knowledge-delivery problem and not a prompt problem?","acceptedAnswer":{"@type":"Answer","text":"Because the context window is where the agent gets the knowledge it acts on for that turn. If the right knowledge is missing, buried, or arranged badly, the agent will reason over the wrong thing. Ordering, chunking, scoping, and prioritizing are knowledge problems: they determine which knowledge the agent actually has in front of it."}},
-        {"@type":"Question","name":"Is more context always better?","acceptedAnswer":{"@type":"Answer","text":"No. More context is not the same as better context. A longer context can bury the relevant fact, increase noise, and raise cost. The job is usually to get the right knowledge in front of the agent, not to fill the window. In many cases a smaller, better-chosen context outperforms a larger, less-curated one."}},
-        {"@type":"Question","name":"How does context engineering relate to the knowledge layer?","acceptedAnswer":{"@type":"Answer","text":"The knowledge layer is where the system knows what is true, current, owned, and allowed. Context engineering is how that knowledge is delivered to the agent for a given task. A strong knowledge layer gives you something worth putting in context. Context engineering is the discipline of putting the right slice of it in front of the agent at the right time."}}
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
       ]
     }
   ]
 }
 </script>
 </head>
-<body class="page-context">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-bar">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="favicon.svg#lamp"></use></svg>
-      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
-    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/why-knowledge.html">Why Knowledge</a>
-      <a href="/enterprise.html">Enterprise</a>
-      <a href="/personal-assistant.html">Personal Assistant</a>
-      <a href="/context-engineering.html" class="current">Context Engineering</a>
-      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
   </div>
 </header>
-
 <main id="main">
+
 <section class="hero">
   <div class="wrap">
     <span class="kicker">Engineering discipline</span>
@@ -218,36 +212,12 @@ Context window  ->  what the agent actually sees this turn</pre>
 </div>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div>Knowledge Sidekick — knowledge for agentic AI.</div>
-    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var toggle=document.querySelector('.menu-toggle');
-  var nav=document.getElementById('nav-primary');
-  if(toggle&&nav){
-    toggle.addEventListener('click',function(){
-      var open=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!open));
-      nav.classList.toggle('open',!open);
-    });
-  }
-  var faqs=document.querySelectorAll('.faq .q');
-  faqs.forEach(function(q){
-    var btn=q.querySelector('.open');
-    var a=q.nextElementSibling;
-    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
-    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
-    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
-  });
-})();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

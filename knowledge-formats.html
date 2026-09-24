@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Formats — Knowledge Sidekick</title>
+<meta name="description" content="Knowledge formats and representations: why structure matters for retrieval, agents, and open standards, and how format choices shape what systems can do with knowledge.">
+<link rel="canonical" href="https://knowledgesidekick.com/knowledge-formats.html">
+<meta property="og:title" content="Knowledge Formats — Knowledge Sidekick">
+<meta property="og:description" content="Why structure matters for retrieval, agents, and open standards: how format choices shape what systems can do with knowledge.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/knowledge-formats.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge Formats — Knowledge Sidekick">
+<meta name="twitter:description" content="Why structure matters for retrieval, agents, and open standards: how format choices shape what systems can do with knowledge.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-brandrow">
+    <a class="site-logo" href="/" aria-label="Knowledge Sidekick — home">
+      <img src="logo.svg" alt="Knowledge Sidekick" width="166" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="topnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="topnav" id="topnav" aria-label="Primary"></nav>
+</header>
+
+<main id="main" class="wrap">
+<article class="article">
+  <h1>Knowledge Formats and Representation</h1>
+  <p>Knowledge is not only a body of content. It is also a set of choices about how that content is represented: what is a fact, what is a procedure, what is a preference, what links to what, what is current, what is owned, and what is meant to be kept separate. The format and representation you choose determine how much of the knowledge is usable later, especially by retrieval systems and agents.</p>
+  <p>A flat document can hold the same facts as a structured representation, but it will not behave the same way. The difference is not cosmetic. Format affects what can be retrieved reliably, what can be updated cleanly, what can be shared across systems, and what can be deprecated without dragging unrelated content down with it.</p>
+
+  <h2 id="why-format-matters">Why format matters</h2>
+  <p>Format is where knowledge becomes usable. A machine-readable representation makes it easier to extract, filter, link, and update knowledge at scale. A human-readable but unstructured pile makes the same knowledge harder to keep current and harder to trust. The right format is not "the most structured one possible"; it is the one that fits how the knowledge will be created, used, and retired.</p>
+  <p>This matters most when knowledge has to work across systems. If one part of the system stores knowledge as prose, another as structured records, and another as hidden context in prompts, the knowledge layer becomes fragmented. Fragmentation is how knowledge turns into something each system has in its own shape and nobody can maintain coherently.</p>
+
+  <h2 id="what-representation-includes">What representation includes</h2>
+  <p>Representation is broader than file format. It includes the choices that determine how knowledge will be interpreted and used:</p>
+  <ul>
+    <li><strong>Structure.</strong> How knowledge is broken into pieces: facts, procedures, relationships, events, preferences, state.</li>
+    <li><strong>Metadata.</strong> What travels with the knowledge: ownership, source, currency, scope, permissions, confidence, and intended use.</li>
+    <li><strong>Linking.</strong> How pieces of knowledge connect to each other, so updates and deprecation can be traced rather than guessed at.</li>
+    <li><strong>Granularity.</strong> How large or small each unit of knowledge is, which affects whether it is retrievable without hauling in too much or too little.</li>
+    <li><strong>Constraints.</strong> What the representation makes easy to do and what it makes hard, including who can see what and when knowledge should be considered stale.</li>
+  </ul>
+
+  <h2 id="open-formats-and-open-standards">Open formats and open standards</h2>
+  <p>Open formats matter because knowledge should not become trapped in one vendor's shape if it is meant to be maintained, shared, or reused. An open representation is one that is understandable outside a single tool, so the knowledge can be inspected, moved, combined, and retired without depending on a proprietary walled garden.</p>
+  <p>This is not an argument that every knowledge artifact must be a formal standard. It is an argument that the underlying representations should be chosen with an eye to longevity and interoperability, especially for knowledge that is meant to outlive a single system or a single team. If knowledge is important enough to maintain, it is important enough to represent in a way that does not make it fragile by design.</p>
+
+  <h2 id="format-choices-and-tradeoffs">Format choices and trade-offs</h2>
+  <p>Different kinds of knowledge call for different representations, and no single format wins everywhere.</p>
+  <ul>
+    <li><strong>Prose</strong> is good for explanation, context, and narrative. It is harder to query, maintain, and scope precisely.</li>
+    <li><strong>Structured records</strong> are good for facts, inventory, state, and relationships. They are easier to maintain and reason over, but can be rigid if the world changes.</li>
+    <li><strong>Procedural knowledge</strong> often needs both: a structured outline plus enough narrative to make the reasoning recoverable.</li>
+    <li><strong>Preference and memory-like knowledge</strong> needs careful movement from implicit behavior to explicit representation, or it becomes hard to correct or forget.</li>
+  </ul>
+  <p>The practical question is not which format is best in the abstract, but which representation lets the knowledge be created, extracted, updated, and deprecated with the least friction for the way it is actually used.</p>
+
+  <h2 id="representation-as-the-bridge-to-extraction">Representation as the bridge to extraction</h2>
+  <p>Representation is where the knowledge lifecycle and the extraction stage meet. A well-represented piece of knowledge is easier to retrieve in the right size, with the right context, and without dragging in stale or unrelated material. A poorly represented one often forces a tradeoff among completeness, precision, and cost.</p>
+  <p>This is one reason format is a knowledge question rather than an implementation detail. The retrieval system can only work with what the representation gives it. If the representation is weak, even good retrieval will struggle.</p>
+
+  <div class="faq">
+    <div>
+      <dt>What is a knowledge format, in plain terms?</dt>
+      <dd>It is the way knowledge is represented so it can be used later. That includes structure, metadata, linking, and granularity, not just the file type it is stored in. The format determines how easily knowledge can be retrieved, updated, shared, and retired.</dd>
+    </div>
+    <div>
+      <dt>Why not just keep everything as documents?</dt>
+      <dd>Documents can hold knowledge, but they make it harder to keep current, to scope, to link, and to retrieve precisely. Structured representation is often better for facts, procedures, relationships, and anything that needs to be maintained or acted on over time.</dd>
+    </div>
+    <div>
+      <dt>What is the connection between format and extraction?</dt>
+      <dd>Extraction depends on representation. If knowledge is chunked, linked, and marked up well, retrieval can be more precise and cheaper. If it is loose or poorly structured, extraction has to do more work and often still misses what matters. Representation is the upstream condition extraction relies on.</dd>
+    </div>
+    <div>
+      <dt>Do open formats really matter?</dt>
+      <dd>They matter when knowledge is meant to last, be shared, or be maintained across tools. Open representations make knowledge less fragile and less tied to one vendor's ecosystem. The argument is not that every artifact must be a formal standard, but that longevity and interoperability should influence format choice.</dd>
+    </div>
+  </div>
+
+  <div class="faq-json-ld" style="display:none">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a knowledge format, in plain terms?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It is the way knowledge is represented so it can be used later. That includes structure, metadata, linking, and granularity, not just the file type it is stored in. The format determines how easily knowledge can be retrieved, updated, shared, and retired." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why not just keep everything as documents?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Documents can hold knowledge, but they make it harder to keep current, to scope, to link, and to retrieve precisely. Structured representation is often better for facts, procedures, relationships, and anything that needs to be maintained or acted on over time." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the connection between format and extraction?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Extraction depends on representation. If knowledge is chunked, linked, and marked up well, retrieval can be more precise and cheaper. If it is loose or poorly structured, extraction has to do more work and often still misses what matters. Representation is the upstream condition extraction relies on." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do open formats really matter?",
+        "acceptedAnswer": { "@type": "Answer", "text": "They matter when knowledge is meant to last, be shared, or be maintained across tools. Open representations make knowledge less fragile and less tied to one vendor's ecosystem. The argument is not that every artifact must be a formal standard, but that longevity and interoperability should influence format choice." }
+      }
+    ]
+  }
+  </script>
+  </div>
+</article>
+
+<nav class="pagelinks" aria-label="Page">
+  <div><strong>This page:</strong> Knowledge Formats and Representation — structure, metadata, linking, open standards.</div>
+  <div>
+    <span>Related:</span>
+    <a href="knowledge-lifecycle.html">Knowledge Lifecycle</a> ·
+    <a href="offering-formats.html">Knowledge Formats (offering)</a> ·
+    <a href="context-engineering.html">Context Engineering</a>
+  </div>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -4,66 +4,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact — Knowledge Sidekick</title>
-<meta name="description" content="Reach Janardan Revuru at janardan.revuru@gmail.com to talk about knowledge for agentic AI: representation, management, context engineering, grounding, and encoding.">
-<link rel="canonical" href="https://knowledgesidekick.com/contact.html">
+<meta name="description" content="Reach Janardan Revuru at janardan.revuru@gmail.com — for business, LLM, personal-assistant, and AEO discussions.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
 <meta property="og:title" content="Contact — Knowledge Sidekick">
-<meta property="og:description" content="Reach Janardan Revuru at janardan.revuru@gmail.com to talk about knowledge for agentic AI.">
+<meta property="og:description" content="Reach Janardan Revuru at janardan.revuru@gmail.com — for business, LLM, personal-assistant, and AEO discussions.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://knowledgesidekick.com/contact.html">
+<meta property="og:url" content="https://knowledgesidekick.com/">
 <meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Contact — Knowledge Sidekick">
-<meta name="twitter:description" content="Reach Janardan Revuru at janardan.revuru@gmail.com to talk about knowledge for agentic AI.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:description" content="Reach Janardan Revuru at janardan.revuru@gmail.com — for business, LLM, personal-assistant, and AEO discussions.">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "@id": "https://knowledgesidekick.com/contact.html#page",
-      "headline": "Contact — Knowledge Sidekick",
-      "description": "Reach Janardan Revuru at janardan.revuru@gmail.com to talk about knowledge for agentic AI.",
-      "inLanguage": "en",
-      "author": {"@id": "https://knowledgesidekick.com/#person"},
-      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
-      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
     },
     {
       "@type": "Person",
       "@id": "https://knowledgesidekick.com/#person",
       "name": "Janardan Revuru",
-      "url": "https://knowledgesidekick.com/contact.html",
-      "email": "mailto:janardan.revuru@gmail.com",
-      "sameAs": ["https://janalogy.com","https://www.linkedin.com/in/rjanardan"]
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
+      ]
     }
   ]
 }
 </script>
 </head>
-<body class="page-contact">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-bar">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="favicon.svg#lamp"></use></svg>
-      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
-    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/why-knowledge.html">Why Knowledge</a>
-      <a href="/enterprise.html">Enterprise</a>
-      <a href="/personal-assistant.html">Personal Assistant</a>
-      <a href="/context-engineering.html">Context Engineering</a>
-      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
-      <a href="/contact.html" class="current">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
   </div>
 </header>
-
 <main id="main">
+
 <div class="wrap">
 <section class="contact-card" id="main">
   <h1>Contact</h1>
@@ -84,26 +79,12 @@
 </section>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div>Knowledge Sidekick — knowledge for agentic AI.</div>
-    <div><a href="/">Home</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var toggle=document.querySelector('.menu-toggle');
-  var nav=document.getElementById('nav-primary');
-  if(toggle&&nav){
-    toggle.addEventListener('click',function(){
-      var open=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!open));
-      nav.classList.toggle('open',!open);
-    });
-  }
-})();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

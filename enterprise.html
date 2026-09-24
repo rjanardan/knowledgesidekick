@@ -3,68 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Knowledge in Enterprise Context — Knowledge Sidekick</title>
-<meta name="description" content="Collecting enterprise knowledge and keeping it current is hard at scale. This page explains the challenges: scattered sources, staleness, ownership, and what happens when agents act on stale knowledge.">
-<link rel="canonical" href="https://knowledgesidekick.com/enterprise.html">
-<meta property="og:title" content="Knowledge in Enterprise Context — Knowledge Sidekick">
-<meta property="og:description" content="Enterprise knowledge is scattered, stale-prone, and owned by people who are not paid to maintain it. A guide to the real challenges.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://knowledgesidekick.com/enterprise.html">
+<title>Knowledge Lifecycle — Knowledge Sidekick</title>
+<meta name="description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
+<meta property="og:title" content="Knowledge Lifecycle — Knowledge Sidekick">
+<meta property="og:description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/">
 <meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knowledge in Enterprise Context — Knowledge Sidekick">
-<meta name="twitter:description" content="Enterprise knowledge is scattered, stale-prone, and owned by people who are not paid to maintain it. A guide to the real challenges.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:title" content="Knowledge Lifecycle — Knowledge Sidekick">
+<meta name="twitter:description" content="The knowledge lifecycle — creation, representation, extraction, updates, and deprecation — and why it matters for agentic systems.">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
-      "@id": "https://knowledgesidekick.com/enterprise.html#article",
-      "headline": "Knowledge in Enterprise Context",
-      "description": "Collecting enterprise knowledge and keeping it current is hard at scale. This page explains the challenges: scattered sources, staleness, ownership, and what happens when agents act on stale knowledge.",
-      "inLanguage": "en",
-      "author": {"@id": "https://knowledgesidekick.com/#person"},
-      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
-      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Why is enterprise knowledge hard to collect for AI agents?","acceptedAnswer":{"@type":"Answer","text":"Enterprise knowledge is rarely in one clean place. It is distributed across documents, tickets, chat, operational tooling, and people's heads. A lot of it is tacit, outdated, duplicated, or buried in tools that were never designed to be a knowledge source. Collecting it is not a dump-and-index problem; it is a problem of finding what matters, deciding what counts, and giving it ownership."}},
-        {"@type":"Question","name":"Why does enterprise knowledge go stale so fast?","acceptedAnswer":{"@type":"Answer","text":"Because companies change constantly. Procedures change, products ship, teams reorganize, access rules change, and people leave. Documentation rarely changes at the same speed. Research on knowledge management describes this as knowledge drift or expiring knowledge: information whose usefulness declines as conditions change, often without anyone noticing until it is used."}},
-        {"@type":"Question","name":"What is the risk of agents acting on stale enterprise knowledge?","acceptedAnswer":{"@type":"Answer","text":"A stale document used to mislead one person at a time. When the same document becomes context for an agent, the mistake can be repeated at scale and at speed. The deeper risk is not that the agent is wrong once; it is that the system treats stale knowledge as current and acts on it confidently."}},
-        {"@type":"Question","name":"What does disciplined enterprise knowledge look like?","acceptedAnswer":{"@type":"Answer","text":"Not a single perfect source of truth. A managed layer with ownership, provenance, freshness signals, and a path for tacit knowledge to become explicit. The goal is not perfection; it is knowing what is current, what is owned, what is safe to use, and what needs review."}}
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
       ]
     }
   ]
 }
 </script>
 </head>
-<body class="page-enterprise">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-bar">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="favicon.svg#lamp"></use></svg>
-      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
-    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/why-knowledge.html">Why Knowledge</a>
-      <a href="/enterprise.html" class="current">Enterprise</a>
-      <a href="/personal-assistant.html">Personal Assistant</a>
-      <a href="/context-engineering.html">Context Engineering</a>
-      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
   </div>
 </header>
-
 <main id="main">
+
 <section class="hero">
   <div class="wrap">
     <span class="kicker">Enterprise setting</span>
@@ -208,36 +202,12 @@
 </div>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div>Knowledge Sidekick — knowledge for agentic AI.</div>
-    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var toggle=document.querySelector('.menu-toggle');
-  var nav=document.getElementById('nav-primary');
-  if(toggle&&nav){
-    toggle.addEventListener('click',function(){
-      var open=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!open));
-      nav.classList.toggle('open',!open);
-    });
-  }
-  var faqs=document.querySelectorAll('.faq .q');
-  faqs.forEach(function(q){
-    var btn=q.querySelector('.open');
-    var a=q.nextElementSibling;
-    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
-    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
-    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
-  });
-})();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory — Knowledge Sidekick</title>
+<meta name="description" content="Short-term, medium-term, and long-term memory in personal assistants: what each layer is for, and why the distinction matters for usefulness and control.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/pa-memory.html">
+<meta property="og:title" content="Memory — Knowledge Sidekick">
+<meta property="og:description" content="Short-term, medium-term, and long-term memory in personal assistants: what each layer is for, and why the distinction matters for usefulness and control.">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://knowledgesidekick.com/pa-memory.html">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="pa-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-brandrow">
+    <a class="site-logo" href="/" aria-label="Knowledge Sidekick — home">
+      <img src="logo.svg" alt="Knowledge Sidekick" width="166" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="topnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="topnav" id="topnav" aria-label="Primary"></nav>
+</header>
+
+<main id="main" class="wrap">
+<article class="article">
+  <h1>Memory</h1>
+  <p>If a personal assistant is going to be useful over time, it needs memory. But "memory" is not one thing. A session that remembers the last three turns behaves differently from one that remembers what you did last week, which behaves differently again from one that remembers what you prefer over months. Treating memory as a single blob makes it harder to decide what should stick and what should not.</p>
+
+  <h2 id="why-memory-matters">Why the layers matter</h2>
+  <p>The reason to separate memory into layers is not just organization. Each layer has a different purpose, a different natural lifespan, and a different level of sensitivity. Short-term memory is about being coherent now. Medium-term memory is about continuity across the working day or week. Long-term memory is about durable patterns that still matter later. When you blur them, you either forget too much too soon or keep too much for too long.</p>
+
+  <h2 id="short-term">Short-term memory</h2>
+  <p>Short-term memory holds the immediate context of a conversation or task: what was just said, what is in progress, what the current goal seems to be. This is the layer that lets an assistant follow a thread instead of restarting from zero on each prompt.</p>
+  <p>The main design question is not whether to have it — almost any usable assistant needs some of it — but how cleanly it is bounded. Short-term memory should help the conversation feel connected without turning into a hidden state the user cannot reason about. When it works well, the assistant feels attentive. When it fails, the assistant feels forgetful or oddly repetitive.</p>
+
+  <h2 id="medium-term">Medium-term memory</h2>
+  <p>Medium-term memory carries context across a longer working window: meetings and tasks this week, topics you returned to, preferences you stated recently, work you left unfinished. This is where an assistant starts to feel less like a search box and more like a working companion, because it can place the current moment inside a near-term pattern.</p>
+  <p>This layer is where usefulness and discomfort first overlap meaningfully. Remembering that you spent Tuesday afternoon on a presentation is useful. Remembering it in a way that feels surveillance-adjacent is not. The difference is usually whether the user can make sense of what is being kept and could, if needed, tell the system to drop it. Medium-term memory is most defensible when it is tied to a task or a context, not hoarded as a permanent record of everything touched.</p>
+
+  <h2 id="long-term">Long-term memory</h2>
+  <p>Long-term memory is the durable layer: stable preferences, recurring routines, facts that remain relevant over weeks or months, working habits that do not change every day. This is the layer that can make an assistant feel genuinely tailored, because it can improve on something stable rather than only on whatever happened five minutes ago.</p>
+  <p>Long-term memory is also where the stakes are highest. A session memory is plausibly temporary; a long-term memory can outlast the reason it was collected. That means the default should usually be more conservative here than elsewhere: remember what is genuinely durable and useful, be able to explain why something is retained, and let the user correct or remove it without drama. A personal assistant that remembers too much, too broadly, or too silently is less trustworthy, even if it is technically impressive.</p>
+
+  <h2 id="memory-is-not-just-storage">Memory is not just storage</h2>
+  <p>A useful memory is not only a place to put things. It has to be retrievable at the right time, interpreted in the right context, and kept from becoming stale. Otherwise the assistant is not "remembering" so much as carrying baggage. A recalled fact from a year ago can be helpful; the same fact surfaced without any sense of whether it still applies can be worse than useless.</p>
+  <p>That is one reason memory and context engineering are related. The assistant has to decide what from memory is relevant now, what is just history, and what should be brought forward quietly. Good memory is not maximal memory. It is memory that earns its place in the current task.</p>
+
+  <div class="faq">
+    <div>
+      <dt>What is the point of splitting memory into short, medium, and long term?</dt>
+      <dd>Because they answer different needs and deserve different rules. Short-term is for staying coherent in a session. Medium-term is for continuity across a near-term working window. Long-term is for durable preference and facts. Mixing them makes it harder to decide what should persist, what should fade, and what the user should control.</dd>
+    </div>
+    <div>
+      <dt>Does more memory always make an assistant better?</dt>
+      <dd>No. More memory can help if it is the right memory and it is used well, but it can also make the assistant noisier, more invasive, and harder to trust. Useful memory is selective, retrievable when needed, and not confused with a permanent record of everything the assistant ever saw.</dd>
+    </div>
+    <div>
+      <dt>What should an assistant remember long-term?</dt>
+      <dd>Things that are stable and genuinely useful over time: durable preferences, recurring routines, and facts that still matter later. It should not, by default, treat every passing detail as equally worth keeping. The strongest design is selective and legible, not exhaustive.</dd>
+    </div>
+    <div>
+      <dt>What is the difference between memory and context?</dt>
+      <dd>Context is usually the immediate or near-term material the assistant is using right now to reason. Memory is what is retained beyond the immediate moment, often across sessions. They overlap, but they are not the same: context is what is in play now, and memory is what is carried forward from elsewhere.</dd>
+    </div>
+  </div>
+
+  <div class="faq-json-ld" style="display:none">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the point of splitting memory into short, medium, and long term?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Because they answer different needs and deserve different rules. Short-term is for staying coherent in a session. Medium-term is for continuity across a near-term working window. Long-term is for durable preference and facts. Mixing them makes it harder to decide what should persist, what should fade, and what the user should control." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does more memory always make an assistant better?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. More memory can help if it is the right memory and it is used well, but it can also make the assistant noisier, more invasive, and harder to trust. Useful memory is selective, retrievable when needed, and not confused with a permanent record of everything the assistant ever saw." }
+      },
+      {
+        "@type": "Question",
+        "name": "What should an assistant remember long-term?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Things that are stable and genuinely useful over time: durable preferences, recurring routines, and facts that still matter later. It should not, by default, treat every passing detail as equally worth keeping. The strongest design is selective and legible, not exhaustive." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between memory and context?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Context is usually the immediate or near-term material the assistant is using right now to reason. Memory is what is retained beyond the immediate moment, often across sessions. They overlap, but they are not the same: context is what is in play now, and memory is what is carried forward from elsewhere." }
+      }
+    ]
+  }
+  </script>
+  </div>
+</article>
+
+<nav class="pagelinks" aria-label="Page">
+  <div><strong>This page:</strong> Memory — short-term, medium-term, long-term.</div>
+  <div>
+    <span>Related:</span>
+    <a href="personal-assistant.html">Personal Assistants overview</a> ·
+    <a href="pa-privacy-compliance.html">Privacy, Control &amp; Compliance</a> ·
+    <a href="context-engineering.html">Context Engineering</a>
+  </div>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

@@ -3,68 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Knowledge in Personal Assistant Context — Knowledge Sidekick</title>
-<meta name="description" content="A personal assistant that knows your emails, calendar, messages, and habits raises privacy, control, and legal questions. This page covers the issues under the DPDP Act (India) and the GDPR (EU).">
-<link rel="canonical" href="https://knowledgesidekick.com/personal-assistant.html">
-<meta property="og:title" content="Knowledge in Personal Assistant Context — Knowledge Sidekick">
-<meta property="og:description" content="When a personal assistant knows your emails, calendar, messages, and habits, the questions are privacy, control, and legal compliance under regimes such as DPDP (India) and GDPR (EU).">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://knowledgesidekick.com/personal-assistant.html">
+<title>Personal Assistants — Overview — Knowledge Sidekick</title>
+<meta name="description" content="The personal-assistant knowledge layer: memory across short, medium, and long term, plus privacy, control, and compliance.">
+<link rel="canonical" href="https://knowledgesidekick.com/">
+<meta property="og:title" content="Personal Assistants — Overview — Knowledge Sidekick">
+<meta property="og:description" content="The personal-assistant knowledge layer: memory across short, medium, and long term, plus privacy, control, and compliance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/">
 <meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knowledge in Personal Assistant Context — Knowledge Sidekick">
-<meta name="twitter:description" content="When a personal assistant knows your emails, calendar, messages, and habits, the questions are privacy, control, and legal compliance.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="twitter:title" content="Personal Assistants — Overview — Knowledge Sidekick">
+<meta name="twitter:description" content="The personal-assistant knowledge layer: memory across short, medium, and long term, plus privacy, control, and compliance.">
+<link rel="icon" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
-      "@id": "https://knowledgesidekick.com/personal-assistant.html#article",
-      "headline": "Knowledge in Personal Assistant Context",
-      "description": "When a personal assistant knows your emails, calendar, messages, and habits, the questions are privacy, control, and legal compliance under regimes such as the DPDP Act (India) and the GDPR (EU).",
-      "inLanguage": "en",
-      "author": {"@id": "https://knowledgesidekick.com/#person"},
-      "publisher": {"@id": "https://knowledgesidekick.com/#website"},
-      "isPartOf": {"@id": "https://knowledgesidekick.com/#website"}
+      "@type": "WebSite",
+      "@id": "https://knowledgesidekick.com/#website",
+      "url": "https://knowledgesidekick.com/",
+      "name": "Knowledge Sidekick",
+      "description": "A knowledge sidekick for business, for LLMs, for personal assistants, and for agent engine optimization.",
+      "publisher": { "@id": "https://knowledgesidekick.com/#person" }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"What are the privacy risks of a personal AI assistant?","acceptedAnswer":{"@type":"Answer","text":"A personal assistant typically operates on sensitive material: emails, messages, calendar, location, health, finances, and daily habits. The risks include over-collection of data, the assistant remembering things you would prefer it did not, the data being used for purposes you did not intend, and the possibility of exposure through breaches, logs, or vendor processing. The core issue is that personal knowledge is sensitive by default and should not be treated as ordinary context."}},
-        {"@type":"Question","name":"What is the difference between control and privacy in a personal assistant?","acceptedAnswer":{"@type":"Answer","text":"Privacy is about what the assistant knows and who else can see it. Control is about whether you can decide what it remembers, what it forgets, who can access it, and how it is used. A system can be private in the sense of being locked down and still leave you with no real control. A good personal assistant design addresses both: limits on what is collected and kept, and real user control over it."}},
-        {"@type":"Question","name":"Which laws matter for personal assistants in India and Europe?","acceptedAnswer":{"@type":"Answer","text":"In India, the Digital Personal Data Protection Act, 2023 (DPDP Act) governs the processing of digital personal data. In the European Union, the General Data Protection Regulation (GDPR) has applied since 25 May 2018 and also reaches organizations outside the EU that offer goods or services to people in the EU. Both frameworks emphasize lawful basis, purpose limitation, data minimization, accuracy, storage limitation, and security. This page describes the landscape, not legal advice."}},
-        {"@type":"Question","name":"Can a personal assistant remember everything about me?","acceptedAnswer":{"@type":"Answer","text":"Technically, maybe. Legally and ethically, that is not the right question. The better question is what it should remember, for how long, for what purpose, and who controls that. Data minimization is the principle that you collect and keep only what is adequate, relevant, and necessary for the purpose. A personal assistant designed under that principle remembers less and is easier to trust."}}
+      "@type": "Person",
+      "@id": "https://knowledgesidekick.com/#person",
+      "name": "Janardan Revuru",
+      "url": "https://knowledgesidekick.com/about",
+      "sameAs": [
+        "https://janalogy.com",
+        "https://www.linkedin.com/in/rjanardan",
+        "https://meetup.com/darling-meetup"
       ]
     }
   ]
 }
 </script>
 </head>
-<body class="page-personal">
+<body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="site-bar">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="favicon.svg#lamp"></use></svg>
-      <span>Knowledge Sidekick<small>knowledge for agentic AI</small></span>
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-primary">Menu</button>
-    <nav class="nav-primary" id="nav-primary" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/why-knowledge.html">Why Knowledge</a>
-      <a href="/enterprise.html">Enterprise</a>
-      <a href="/personal-assistant.html" class="current">Personal Assistant</a>
-      <a href="/context-engineering.html">Context Engineering</a>
-      <a href="/token-savings.html">Token Savings &amp; Grounding</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
   </div>
 </header>
-
 <main id="main">
+
 <section class="hero">
   <div class="wrap">
     <span class="kicker">Personal setting</span>
@@ -236,36 +230,12 @@
 </div>
 </div>
 </main>
-
 <footer class="site-footer">
   <div class="wrap">
     <div>Knowledge Sidekick — knowledge for agentic AI.</div>
-    <div><a href="/contact.html">Contact</a> · <a href="https://janalogy.com">janalogy.com</a></div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var toggle=document.querySelector('.menu-toggle');
-  var nav=document.getElementById('nav-primary');
-  if(toggle&&nav){
-    toggle.addEventListener('click',function(){
-      var open=toggle.getAttribute('aria-expanded')==='true';
-      toggle.setAttribute('aria-expanded',String(!open));
-      nav.classList.toggle('open',!open);
-    });
-  }
-  var faqs=document.querySelectorAll('.faq .q');
-  faqs.forEach(function(q){
-    var btn=q.querySelector('.open');
-    var a=q.nextElementSibling;
-    function openIt(){q.setAttribute('aria-expanded','true');btn.setAttribute('aria-expanded','true');btn.textContent='Hide';a.classList.add('open');}
-    function closeIt(){q.setAttribute('aria-expanded','false');btn.setAttribute('aria-expanded','false');btn.textContent='Show';a.classList.remove('open');}
-    btn.addEventListener('click',function(e){e.stopPropagation();if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('click',function(){if(a.classList.contains('open'))closeIt();else openIt();});
-    q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(a.classList.contains('open'))closeIt();else openIt();}});
-  });
-})();
-</script>
+<script src="nav.js"></script>
 </body>
 </html>

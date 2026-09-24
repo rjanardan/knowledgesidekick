@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agents — Knowledge Sidekick</title>
+<meta name="description" content="Agents are the capability layer for agentic systems: autonomous or semi-autonomous units that perceive, decide, act, and use tools. This is the technology foundation that LLMs, MCP, tool use, and computer use build on.">
+<link rel="canonical" href="https://knowledgesidekick.com/agents.html">
+<meta property="og:title" content="Agents — Knowledge Sidekick">
+<meta property="og:description" content="Agents are the capability layer for agentic systems: perceive, decide, act, use tools.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/agents.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agents — Knowledge Sidekick">
+<meta name="twitter:description" content="Agents are the capability layer for agentic systems.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/agents.html#article",
+      "headline": "Agents",
+      "description": "Agents are the capability layer for agentic systems: perceive, decide, act, use tools.",
+      "inLanguage": "en",
+      "author": { "@id": "https://knowledgesidekick.com/#person" },
+      "publisher": { "@id": "https://knowledgesidekick.com/#website" },
+      "isPartOf": { "@id": "https://knowledgesidekick.com/#website" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is an agent in the context of AI?", "acceptedAnswer": { "@type": "Answer", "text": "An agent is a system that can perceive its environment, make decisions, and act — often using tools, APIs, or other capabilities — to achieve a goal. In AI, this usually means an LLM-based system that can plan, call functions, and use external resources rather than only generating text." } },
+        { "@type": "Question", "name": "How are agents different from a plain LLM?", "acceptedAnswer": { "@type": "Answer", "text": "A plain LLM generates text from a prompt. An agent can take actions: it can plan, call tools, read state, write back, and often continue across multiple steps. The agent is the layer that turns generation into action, and knowledge is what it acts on." } },
+        { "@type": "Question", "name": "Why does knowledge matter for agents specifically?", "acceptedAnswer": { "@type": "Answer", "text": "Because agents act on what they know. If the agent's knowledge is stale, incomplete, poorly represented, or out of scope, the agent will make confident mistakes. The knowledge layer is what makes the agent's actions dependable rather than just fluent." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-agents">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Capability layer</span>
+    <h1>Agents: the layer that turns generation into action</h1>
+    <p class="lede">An agent is a system that can perceive, decide, and act — often using tools, APIs, and other capabilities. This page is the base layer of the agents stack: what an agent is, how it differs from a plain LLM, and why knowledge is what makes its actions dependable.</p>
+    <p class="meta"><a href="/">Home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<div class="callout">
+  <span class="label">Direct answer</span>
+  <h3>What is an agent in AI?</h3>
+  <p>An agent is a system that can perceive its environment, make decisions, and act — often using tools, APIs, or other capabilities — to achieve a goal. In modern AI, this usually means an LLM-based system that can plan, call functions, read state, and continue across multiple steps, rather than only generating a single response.</p>
+</div>
+
+<section id="agents-plain-llm">
+  <h2>Agents vs plain LLMs</h2>
+  <p class="lead">A plain LLM generates text. An agent acts.</p>
+  <p>The difference is not just a bigger prompt. An agent has a loop: it receives input, decides what to do, optionally uses tools or calls external systems, observes the result, and continues. That loop is what turns a model from something that answers into something that does.</p>
+  <p>This distinction matters for the knowledge layer because the agent's actions depend on knowledge at every step: what is the current state, what does the tool expect, what is the right procedure, what is still true, and what is the agent allowed to do. A plain LLM's failure is usually a wrong answer. An agent's failure is often a wrong action.</p>
+  <p>Related pages: <a href="/llms.html">LLMs</a> are usually the reasoning core; <a href="/mcp.html">MCP</a> is one way to give agents tool access; <a href="/tool-use.html">Tool use</a> is the action layer; <a href="/computer-use.html">Computer use</a> is the interface layer when the agent acts on a computer.</p>
+</section>
+
+<section id="why-knowledge-matters-here">
+  <h2>Why knowledge matters for agents</h2>
+  <p class="lead">Agents make knowledge failures more expensive, not less.</p>
+  <p>An agent that plans a workflow is using knowledge about the workflow's rules. An agent that calls an API is using knowledge about the API's contract. An agent that answers from internal data is using knowledge about what is authoritative and current. An agent that explains itself is using knowledge about what it did and why.</p>
+  <p>When an agent has weak knowledge — stale procedures, missing context, the wrong tool contract, unclear permissions — it does not simply give a bad answer. It can take a bad action, repeatedly and at speed. That is why the knowledge layer is first-class for agents: the cost of being wrong is higher, and the system is acting on whatever knowledge it has, good or bad.</p>
+  <p><a href="/">Home</a> · <a href="/why-knowledge.html">Why Knowledge</a> · <a href="/enterprise.html">Knowledge Lifecycle</a></p>
+</section>
+
+<section id="pieces-stack">
+  <h2>The agents stack, at a glance</h2>
+  <p>An agentic system is usually more than "an LLM." The stack includes:</p>
+  <ul>
+    <li><strong>Reasoning core.</strong> Usually an LLM, sometimes more than one. This is where the model reasons about what to do.</li>
+    <li><strong>Plan / loop.</strong> The structure that lets the agent decide, act, observe, and continue.</li>
+    <li><strong>Tools and interfaces.</strong> APIs, functions, and possibly computer-level actions. MCP is one standard way to expose tools; computer use is one way to act on a UI.</li>
+    <li><strong>Knowledge layer.</strong> The facts, procedures, state, permissions, and representations the agent acts on.</li>
+    <li><strong>Guardrails and constraints.</strong> What the agent is allowed to do, what it should not do, and what it should do when it is not sure.</li>
+  </ul>
+  <p>Knowledge is the cross-cutting layer in that stack. It is what the reasoning core reasons over, what the tools expect, what the plan depends on, and what the guardrails are protecting.</p>
+</section>
+
+<section id="where-next-agents">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/llms.html">LLMs</a> — the reasoning core behind most agents.</li>
+    <li><a href="/mcp.html">MCP</a> — a standard way to give agents tool access.</li>
+    <li><a href="/tool-use.html">Tool use</a> — the action layer.</li>
+    <li><a href="/computer-use.html">Computer use</a> — acting on a computer interface.</li>
+    <li><a href="/enterprise.html">Knowledge Lifecycle</a> — the topic layer that makes agents dependable.</li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is an agent in AI?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>An agent is a system that can perceive its environment, make decisions, and act — often using tools, APIs, or other capabilities — to achieve a goal. In modern AI, this usually means an LLM-based system that can plan, call functions, read state, and continue across multiple steps, rather than only generating a single response.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How are agents different from a plain LLM?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>A plain LLM generates text from a prompt. An agent can take actions: it can plan, call tools, read state, write back, and often continue across multiple steps. The agent is the layer that turns generation into action, and knowledge is what it acts on.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why does knowledge matter for agents specifically?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because agents act on what they know. If the agent's knowledge is stale, incomplete, poorly represented, or out of scope, the agent will make confident mistakes. The knowledge layer is what makes the agent's actions dependable rather than just fluent.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+    <li>Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs — <a href="https://arxiv.org/abs/2606.02581">arxiv.org/abs/2606.02581</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

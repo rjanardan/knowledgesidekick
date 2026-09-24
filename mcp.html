@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP — Knowledge Sidekick</title>
+<meta name="description" content="MCP (Model Context Protocol) is a standard way to give agents tool access and context. This page explains what MCP is, why it matters for the knowledge and tool layer, and where it fits in an agentic stack.">
+<link rel="canonical" href="https://knowledgesidekick.com/mcp.html">
+<meta property="og:title" content="MCP — Knowledge Sidekick">
+<meta property="og:description" content="MCP is a standard way to give agents structured tool access and context.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/mcp.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MCP — Knowledge Sidekick">
+<meta name="twitter:description" content="MCP is a standard way to give agents structured tool access and context.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/mcp.html#article",
+      "headline": "MCP",
+      "description": "MCP is a standard way to give agents structured tool access and context.",
+      "inLanguage": "en",
+      "author": { "@id": "https://knowledgesidekick.com/#person" },
+      "publisher": { "@id": "https://knowledgesidekick.com/#website" },
+      "isPartOf": { "@id": "https://knowledgesidekick.com/#website" }
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-mcp">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Tool / context standard</span>
+    <h1>MCP: a standard way to give agents tool access and context</h1>
+    <p class="lede">MCP (Model Context Protocol) is a standard for connecting models and agents to external tools, data, and context in a structured way. This page explains what MCP is, why it matters for the tool and knowledge layer, and where it fits in an agentic stack.</p>
+    <p class="meta"><a href="/">Home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<div class="callout">
+  <span class="label">Direct answer</span>
+  <h3>What is MCP?</h3>
+  <p>MCP is a protocol/standard for connecting models and agents to external tools, data sources, and context in a structured way, instead of each integration being a one-off. In an agentic stack, MCP is one way to give the agent a clean interface to the tools and knowledge it needs — and to keep that interface standardized rather than bespoke.</p>
+</div>
+
+<section id="why-mcp-matters">
+  <h2>Why MCP matters for agents</h2>
+  <p class="lead">Agents need to use tools and access context. MCP is one standard way to do that.</p>
+  <p>An agent that can only generate text is limited. To act, it needs to call tools, read data, write back, and often interact with external systems. Without a standard, each of those integrations tends to become a custom plugin, a custom prompt convention, or a custom client–server setup. MCP is an attempt to make that cleaner and more standard.</p>
+  <p>From the knowledge perspective, MCP matters because it is one of the places where the knowledge layer meets the action layer. The tools an agent uses, the context it reads, and the knowledge it acts on all have to be connected somehow. MCP is one standard for that connection.</p>
+</section>
+
+<section id="mcp-and-knowledge">
+  <h2>MCP and the knowledge layer</h2>
+  <p>MCP is not itself the knowledge layer. It is a transport/interface layer: it is one way to expose tools and context to a model or agent. The knowledge layer is what says what is true, current, owned, and allowed. MCP can carry that knowledge to the agent, but it does not replace the knowledge layer.</p>
+  <p>The useful way to think about it:</p>
+  <ul>
+    <li><strong>Knowledge layer.</strong> What the agent should know: facts, procedures, state, permissions, freshness, scope.</li>
+    <li><strong>Context engineering.</strong> How that knowledge is delivered to the agent for a given task.</li>
+    <li><strong>MCP.</strong> One standard interface for exposing tools and context so the agent can use them.</li>
+  </ul>
+  <p>A good system uses all three: a real knowledge layer, a real context design, and a standard interface like MCP to connect them to the agent.</p>
+</section>
+
+<section id="where-mcp-fits">
+  <h2>Where MCP fits in the stack</h2>
+  <p>In the agents stack on this site, MCP sits alongside LLMs, tool use, and computer use:</p>
+  <ul>
+    <li><strong>LLMs</strong> — the reasoning core.</li>
+    <li><strong>Agents</strong> — the loop that reasons, acts, and continues.</li>
+    <li><strong>MCP</strong> — one standard interface for tools and context.</li>
+    <li><strong>Tool use</strong> — the action layer, the actual things the agent does.</li>
+    <li><strong>Computer use</strong> — acting at the UI/computer level when needed.</li>
+  </ul>
+  <p>MCP is valuable because it can reduce bespoke integration work and make tool/context access more standard. It is not a substitute for good knowledge, good context, or good guardrails.</p>
+</section>
+
+<section id="where-next-mcp">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/agents.html">Agents</a> — the capability layer.</li>
+    <li><a href="/llms.html">LLMs</a> — the reasoning core.</li>
+    <li><a href="/tool-use.html">Tool use</a> — the action layer.</li>
+    <li><a href="/computer-use.html">Computer use</a> — UI-level action.</li>
+    <li><a href="/enterprise.html">Knowledge Lifecycle</a> — the knowledge layer behind it.</li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Model Context Protocol (MCP) — see the official MCP documentation and announcements from the standard's maintainer for current specification and usage.</li>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

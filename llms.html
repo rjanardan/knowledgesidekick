@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LLMs — Knowledge Sidekick</title>
+<meta name="description" content="LLMs are the reasoning core behind most agentic systems. This page covers what LLMs bring, where they fall short, and why the knowledge layer is what turns an LLM from a text generator into part of a dependable system.">
+<link rel="canonical" href="https://knowledgesidekick.com/llms.html">
+<meta property="og:title" content="LLMs — Knowledge Sidekick">
+<meta property="og:description" content="LLMs are the reasoning core behind most agentic systems — but they are only part of the stack.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/llms.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LLMs — Knowledge Sidekick">
+<meta name="twitter:description" content="LLMs are the reasoning core behind most agentic systems.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://knowledgesidekick.com/llms.html#article",
+      "headline": "LLMs",
+      "description": "LLMs are the reasoning core behind most agentic systems — but only part of the stack.",
+      "inLanguage": "en",
+      "author": { "@id": "https://knowledgesidekick.com/#person" },
+      "publisher": { "@id": "https://knowledgesidekick.com/#website" },
+      "isPartOf": { "@id": "https://knowledgesidekick.com/#website" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the role of an LLM in an agentic system?", "acceptedAnswer": { "@type": "Answer", "text": "The LLM is usually the reasoning core: it reasons about what to do, generates plans or actions, and produces the text or structured output the system uses. It is powerful at reasoning and language, but it is not, by itself, a knowledge layer, a tool layer, or an action loop." } },
+        { "@type": "Question", "name": "Why are LLMs not enough on their own?", "acceptedAnswer": { "@type": "Answer", "text": "Because an LLM reasons from what it is given. If the knowledge it reasons over is stale, incomplete, poorly represented, or out of scope, the LLM will produce fluent but wrong output. The LLM is only one part of a dependable system; the knowledge layer, the tools, and the action loop are the rest." } },
+        { "@type": "Question", "name": "How does the knowledge layer help an LLM?", "acceptedAnswer": { "@type": "Answer", "text": "By giving it the right knowledge in the right slice, at the right time, with clear source, freshness, and scope. That is the difference between an LLM that reasons over bad context and one that reasons over dependable knowledge. It also improves grounding and often reduces wasted tokens." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-llms">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="brand" href="/" aria-label="Knowledge Sidekick home">
+      <svg viewBox="0 0 460 120" role="img" aria-hidden="true">
+        <use href="logo.svg#main"></use>
+      </svg>
+      <span class="brand-text"><b>Knowledge Sidekick</b><span>knowledge for agentic AI</span></span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Main menu">Menu</button>
+    <div class="nav-wrap" id="site-nav" aria-label="Primary"></div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Reasoning core</span>
+    <h1>LLMs: the reasoning core behind most agentic systems</h1>
+    <p class="lede">Large language models are powerful at reasoning and language, and they are usually the reasoning core inside an agent. But an LLM is not a knowledge layer, not a tool layer, and not an action loop. This page is about what LLMs bring, where they fall short, and why the knowledge layer is what makes them dependable in practice.</p>
+    <p class="meta"><a href="/">Home</a> · <a href="/contact.html">Contact</a></p>
+  </div>
+</section>
+
+<div class="page">
+<div class="wrap">
+
+<div class="callout">
+  <span class="label">Direct answer</span>
+  <h3>What do LLMs bring to an agentic system?</h3>
+  <p>Reasoning, language understanding, and generation. An LLM can take a goal, break it into steps, read context, produce a plan or an action, and explain what it did. That makes it the natural reasoning core inside an agent — but it is only one part of a dependable system. The rest is knowledge, tools, and the loop that lets the agent act and recover.</p>
+</div>
+
+<section id="llm-reasoning-core">
+  <h2>The LLM as reasoning core</h2>
+  <p class="lead">The LLM is the part that reasons about what to do next.</p>
+  <p>In an agentic system, the LLM is typically the component that takes the current situation and figures out the next step: which tool to call, which piece of knowledge to use, how to phrase the next action, or how to explain what happened. That reasoning ability is why LLMs are at the center of most agentic systems.</p>
+  <p>But the LLM is not the whole system. It reasons from what it is given. If the knowledge it reasons over is stale, incomplete, poorly represented, or out of scope, the LLM will produce fluent output that is wrong in the ways that matter. The LLM is powerful; the knowledge layer is what makes that power usable.</p>
+</section>
+
+<section id="llm-limits">
+  <h2>Where LLMs fall short without a knowledge layer</h2>
+  <ul>
+    <li><strong>Stale knowledge.</strong> An LLM does not inherently know what changed in your systems after its training or after the last update it was given. Without a current knowledge layer, it acts on old facts.</li>
+    <li><strong>Missing knowledge.</strong> The LLM can only reason over what it has in context or what it can retrieve. If the right knowledge is not there, it guesses — often confidently.</li>
+    <li><strong>Representation gaps.</strong> Even if the knowledge exists somewhere, it may not be in a form the LLM can use well: unstructured, duplicated, contradictory, or poorly scoped.</li>
+    <li><strong>No built-in grounding.</strong> An LLM can sound authoritative without any tie to evidence. Without grounding, its answers are plausible but not checkable.</li>
+    <li><strong>No built-in permissions.</strong> An LLM does not inherently know what it is allowed to see or do. That is a knowledge-and-governance problem, not a model problem.</li>
+  </ul>
+  <p>These are not model failures in the sense of a weak model. They are knowledge failures — the model is reasoning over a knowledge environment it was not given.</p>
+</section>
+
+<section id="knowledge-layer-helps-llm">
+  <h2>How the knowledge layer helps the LLM</h2>
+  <p class="lead">The knowledge layer gives the LLM something better to reason over.</p>
+  <p>A strong knowledge layer does several things for the LLM at once:</p>
+  <ul>
+    <li><strong>Right knowledge, right slice.</strong> The LLM gets the knowledge the task actually needs, not everything available. That improves accuracy and often reduces tokens.</li>
+    <li><strong>Current knowledge.</strong> The LLM reasons over what is true now, not what was true when the document was written.</li>
+    <li><strong>Clear source and scope.</strong> The LLM can act on knowledge that is owned, scoped, and checkable, not on a pile of undifferentiated text.</li>
+    <li><strong>Grounding.</strong> The LLM's claims can be tied to evidence, which makes the system more dependable and more auditable.</li>
+  </ul>
+  <p>That is why the knowledge layer and the LLM are partners, not competitors. The LLM reasons; the knowledge layer says what to reason over.</p>
+  <p>Related: <a href="/token-savings.html">Token Savings</a> · <a href="/grounding.html">Grounding</a> · <a href="/context-engineering.html">Context Engineering</a></p>
+</section>
+
+<section id="where-next-llms">
+  <h2>Where to go next</h2>
+  <ul>
+    <li><a href="/agents.html">Agents</a> — the layer that turns the LLM into action.</li>
+    <li><a href="/grounding.html">Grounding</a> — tying LLM output to evidence.</li>
+    <li><a href="/token-savings.html">Token Savings</a> — the cost side of knowledge and context.</li>
+    <li><a href="/enterprise.html">Knowledge Lifecycle</a> — where the knowledge comes from.</li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the role of an LLM in an agentic system?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>The LLM is usually the reasoning core: it reasons about what to do, generates plans or actions, and produces the text or structured output the system uses. It is powerful at reasoning and language, but it is not, by itself, a knowledge layer, a tool layer, or an action loop.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Why are LLMs not enough on their own?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>Because an LLM reasons from what it is given. If the knowledge it reasons over is stale, incomplete, poorly represented, or out of scope, the LLM will produce fluent but wrong output. The LLM is only one part of a dependable system; the knowledge layer, the tools, and the action loop are the rest.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>How does the knowledge layer help an LLM?</span><button class="open" aria-label="Toggle answer" aria-expanded="false">Show</button></div>
+    <div class="a"><p>By giving it the right knowledge in the right slice, at the right time, with clear source, freshness, and scope. That is the difference between an LLM that reasons over bad context and one that reasons over dependable knowledge. It also improves grounding and often reduces wasted tokens.</p></div>
+  </div>
+</section>
+
+<div class="sources">
+  <h2>Sources and further reading</h2>
+  <ol>
+    <li>Retrieval-Augmented Generation for Large Language Models: A Survey — <a href="https://arxiv.org/abs/2312.10997">arxiv.org/abs/2312.10997</a></li>
+    <li>Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs — <a href="https://arxiv.org/abs/2606.02581">arxiv.org/abs/2606.02581</a></li>
+  </ol>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

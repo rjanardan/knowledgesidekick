@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Lifecycle — Knowledge Sidekick</title>
+<meta name="description" content="The knowledge lifecycle — creation, representation, extraction, updates, deprecation — and why it matters for agentic systems.">
+<link rel="canonical" href="https://knowledgesidekick.com/knowledge-lifecycle.html">
+<meta property="og:title" content="Knowledge Lifecycle — Knowledge Sidekick">
+<meta property="og:description" content="The knowledge lifecycle — creation, representation, extraction, updates, deprecation — and why it matters for agentic systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowledgesidekick.com/knowledge-lifecycle.html">
+<meta property="og:image" content="https://knowledgesidekick.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knowledge Lifecycle — Knowledge Sidekick">
+<meta name="twitter:description" content="The knowledge lifecycle — creation, representation, extraction, updates, deprecation — and why it matters for agentic systems.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-knowledge">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-brandrow">
+    <a class="site-logo" href="/" aria-label="Knowledge Sidekick — home">
+      <img src="logo.svg" alt="Knowledge Sidekick" width="166" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="topnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="topnav" id="topnav" aria-label="Primary"></nav>
+</header>
+
+<main id="main" class="wrap">
+<article class="article">
+  <h1>Knowledge Lifecycle</h1>
+  <p>Knowledge does not arrive finished. It is created, shaped into a representation, pulled back out when it is needed, kept current, and eventually retired when it stops being true or useful. Treating knowledge as something with a lifecycle is what turns it from a pile of stored text into something an agentic system can actually rely on.</p>
+  <p>This page is about the full arc: where knowledge comes from, how it should be represented, how it gets used, how it stays current, and how it is deprecated when it no longer holds. The same lifecycle shows up everywhere on the site, because the practical problems — stale knowledge, wrong retrieval, useless memory, bad agent behavior — usually come from skipping one of these stages.</p>
+
+  <h2 id="the-stages">The stages</h2>
+  <p>A useful way to think about knowledge is as a lifecycle with five recurring stages. Each stage has its own failure modes, and each one can quietly break the next.</p>
+
+  <div class="lifecycle">
+    <div class="stage" id="creation">
+      <h3>1. Creation</h3>
+      <p>Knowledge begins when something is captured in a form that can be used later: a decision recorded, a procedure written down, a fact extracted from a document, a preference stated, a tool described, a piece of context saved. Creation is not just "saving something." It is the moment when raw material becomes knowledge that can be retrieved and acted on.</p>
+      <p>The common failure here is capture without structure: storing text that is hard to find, hard to interpret, or hard to trust later because nobody is clearly responsible for it. Good creation makes knowledge usable from the start.</p>
+    </div>
+
+    <div class="stage" id="representation">
+      <h3>2. Representation</h3>
+      <p>Representation is how knowledge is shaped so it can be known and used by a system: what structure it has, how it is chunked or linked, what metadata travels with it, how it connects to related knowledge. This is where knowledge becomes retrievable and interpretable rather than merely stored.</p>
+      <p>Bad representation is a major source of retrieval failure. A fact can exist in the system and still be effectively invisible if it is buried in the wrong format, the wrong chunk size, or the wrong context. Representation is the bridge between "we have it" and "the system can use it."</p>
+    </div>
+
+    <div class="stage" id="extraction">
+      <h3>3. Extraction</h3>
+      <p>Extraction is how knowledge is pulled back out when it is needed: retrieval, search, recall, summarization, or the agent's selection of the right slice of knowledge for the current task. Extraction is the point where the knowledge lifecycle meets action.</p>
+      <p>Extraction can fail even when the underlying knowledge is good. Relevan ce can be wrong, the chunk can be too big or too small, the query can miss what matters, and the ordering can bury the useful fact. This is why extraction is one of the most important and most neglected stages of the lifecycle.</p>
+    </div>
+
+    <div class="stage" id="updates">
+      <h3>4. Updates</h3>
+      <p>Knowledge ages. Procedures change, facts get corrected, preferences shift, tools are replaced, context becomes stale. The update stage is what keeps knowledge from drifting into falsehood while it still looks trustworthy.</p>
+      <p>Without updates, knowledge decays quietly. The danger is not only that something becomes outdated, but that it remains present and authoritative-looking long after it should have been revised. Update is what separates a knowledge system that degrades slowly from one that becomes actively misleading.</p>
+    </div>
+
+    <div class="stage" id="deprecation">
+      <h3>5. Deprecation</h3>
+      <p>Not all knowledge should live forever. Some of it was provisional. Some has been superseded. Some is now wrong, or no longer relevant, or no longer allowed. Deprecation is the deliberate act of marking knowledge as no longer usable, and removing or quarantining it so it stops influencing decisions.</p>
+      <p>Deprecation is often skipped, and the cost shows up as stale knowledge continuing to guide retrieval, memory, or agent behavior. A lifecycle without deprecation is not a lifecycle; it is accumulation.</p>
+    </div>
+  </div>
+
+  <h2 id="why-the-cycle-matters">Why the cycle matters</h2>
+  <p>The lifecycle matters because the failures that show up in practice usually trace back to one of these stages. A stale answer is often an update problem. A missing fact is often a creation or representation problem. A confident wrong answer is often an extraction problem. A system that keeps acting on yesterday's procedure is a deprecation problem.</p>
+  <p>Seen this way, the lifecycle is not abstract process work. It is the set of maintenance jobs that keep knowledge usable for agents, assistants, and retrieval systems. Skip the maintenance and the knowledge layer will still exist; it just will not be reliable.</p>
+
+  <h2 id="lifecycle-across-contexts">Lifecycle across contexts</h2>
+  <p>The same five stages apply across the different settings on this site, but with different pressure.</p>
+  <ul>
+    <li><strong>Enterprise.</strong> The lifecycle has to handle scale, ownership, permissions, and the cost of stale internal knowledge moving into decisions and agentic actions.</li>
+    <li><strong>LLMs and agent systems.</strong> The lifecycle shapes what enters the context window and how current and trustworthy that knowledge is when it is used in a decision loop.</li>
+    <li><strong>Personal assistants.</strong> The lifecycle includes memory: what is remembered, how long it lasts, when it should be corrected or forgotten, and how privacy and control fit into the update and deprecation stages.</li>
+  </ul>
+  <p>That is why the lifecycle is a recurring theme rather than a one-off topic. The details change by context, but the arc is the same.</p>
+
+  <div class="faq">
+    <div>
+      <dt>What is the knowledge lifecycle?</dt>
+      <dd>The recurring stages knowledge goes through: creation, representation, extraction, updates, and deprecation. The point is that knowledge is not static. It is made, shaped, retrieved, kept current, and eventually retired, and each stage affects whether it is usable later.</dd>
+    </div>
+    <div>
+      <dt>Why is representation a separate stage?</dt>
+      <dd>Because knowledge can exist and still be hard to use if it is poorly shaped. Representation determines how retrievable, interpretable, and connected the knowledge is. Good knowledge with bad representation often fails at extraction, where it matters.</dd>
+    </div>
+    <div>
+      <dt>What happens if you skip deprecation?</dt>
+      <dd>Knowledge accumulates, including knowledge that is old, superseded, or no longer correct. It can keep influencing retrieval, memory, and agent behavior long after it should have been retired. Deprecation is what keeps the lifecycle from becoming uncontrolled accumulation.</dd>
+    </div>
+    <div>
+      <dt>Does this lifecycle only apply to enterprise systems?</dt>
+      <dd>No. It applies wherever knowledge is used over time: enterprise systems, LLM and agent pipelines, and personal assistants. The stages are the same; the pressure and the risks differ by context.</dd>
+    </div>
+  </div>
+
+  <div class="faq-json-ld" style="display:none">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the knowledge lifecycle?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The recurring stages knowledge goes through: creation, representation, extraction, updates, and deprecation. The point is that knowledge is not static. It is made, shaped, retrieved, kept current, and eventually retired, and each stage affects whether it is usable later." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is representation a separate stage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Because knowledge can exist and still be hard to use if it is poorly shaped. Representation determines how retrievable, interpretable, and connected the knowledge is. Good knowledge with bad representation often fails at extraction, where it matters." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if you skip deprecation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Knowledge accumulates, including knowledge that is old, superseded, or no longer correct. It can keep influencing retrieval, memory, and agent behavior long after it should have been retired. Deprecation is what keeps the lifecycle from becoming uncontrolled accumulation." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this lifecycle only apply to enterprise systems?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It applies wherever knowledge is used over time: enterprise systems, LLM and agent pipelines, and personal assistants. The stages are the same; the pressure and the risks differ by context." }
+      }
+    ]
+  }
+  </script>
+  </div>
+</article>
+
+<nav class="pagelinks" aria-label="Page">
+  <div><strong>This page:</strong> Knowledge Lifecycle — creation, representation, extraction, updates, deprecation.</div>
+  <div>
+    <span>Related:</span>
+    <a href="offering-lifecycle.html">Knowledge Lifecycle (offering)</a> ·
+    <a href="context-engineering.html">Context Engineering</a> ·
+    <a href="offering-formats.html">Knowledge Formats</a>
+  </div>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>

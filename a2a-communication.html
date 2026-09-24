@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A2A Communication — Knowledge Sidekick</title>
+<meta name="descr⟪HERMES-CONTEXT-COMPRESSION: 11,553 of 11,753 chars omitted here by Hermes's context compressor. This is NOT part of the original tool call and must never be reproduced in new output — always write full, untruncated content.⟫<link rel="icon" href="favicon.svg">
+</head>
+<body class="page-enterprise">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-brandrow">
+    <a class="site-logo" href="/" aria-label="Knowledge Sidekick — home">
+      <img src="logo.svg" alt="Knowledge Sidekick" width="166" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="topnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="topnav" id="topnav" aria-label="Primary"></nav>
+</header>
+
+<main id="main" class="wrap">
+<article class="article">
+  <h1>Agent-to-Agent Communication</h1>
+  <p>When multiple agents work on a problem, the interesting part is not only what each agent knows, but how they share what they know. Agent-to-agent communication is the knowledge problem in a new shape: one agent's output becomes another agent's input, and the quality of the exchange determines whether the system as a whole is coherent.</p>
+  <p>This is where knowledge moves from being internal to a single agent to being part of a collaboration. The same concerns show up, but with more edges: what is worth transmitting, in what form, with what context, and with what assurance that the receiving agent will understand it correctly.</p>
+
+  <h2 id="why-it-is-a-knowledge-problem">Why this is a knowledge problem</h2>
+  <p>Agents do not communicate well just because they speak the same protocol. They communicate well when the knowledge they pass is relevant, current, and structured in a way the other agent can actually use. A message that is technically delivered but poorly framed can still mislead the next agent.</p>
+  <p>That means communication is not a separate concern from knowledge representation. If the underlying knowledge is vague, stale, or unowned, the messages built from it will carry the same weaknesses into the next step. Communication quality is downstream of knowledge quality and upstream of system outcomes.</p>
+
+  <h2 id="what-makes-agent-communication-useful">What makes agent communication useful</h2>
+  <p>Good agent-to-agent exchange tends to share a few properties. Each one is a knowledge question, not just a transport question.</p>
+  <ul>
+    <li><strong>Relevance.</strong> The sender includes what the receiver needs, not everything it knows. Over-sharing wastes context and can drown the useful signal.</li>
+    <li><strong>Context.</strong> The receiver gets enough surrounding information to interpret the message correctly, without being forced to infer it.</li>
+    <li><strong>Structure.</strong> The information is shaped so the receiving agent can act on it: what changed, what is being asked for, what is assumed.</li>
+    <li><strong>Traceability.</strong> The receiver can tell where the knowledge came from, which matters when different agents have different sources and different confidence levels.</li>
+    <li><strong>Currency.</strong> The shared knowledge is not misleadingly old, especially when the task depends on state that changes.</li>
+  </ul>
+
+  <h2 id="the-risks">The risks</h2>
+  <p>Agent-to-agent communication can fail in a few recognizable ways. One is overload: agents pass too much knowledge around, and the system spends its context and attention on noise. Another is misunderstanding: the sender's framing assumes something the receiver does not share. Another is staleness: one agent acts on knowledge another agent had already corrected or invalidated.</p>
+  <p>There is also a trust problem. If agents are passing knowledge into each other's decision loops, the system needs a way to know which knowledge is solid, which is tentative, and which depends on a source that may not be authoritative. Without that, an agentic system can become a game of telephone with tools attached.</p>
+
+  <h2 id="the-connection-to-knowledge-lifecycle">The connection to the knowledge lifecycle</h2>
+  <p>Communication does not solve the knowledge lifecycle. It depends on it. Creation, representation, extraction, updates, and deprecation all matter here: agents need to share knowledge that is well formed, kept current, and retired when it no longer holds. If the lifecycle is weak, agent-to-agent communication just spreads weak knowledge faster.</p>
+  <p>Seen that way, agent-to-agent communication is one of the clearest reasons to care about knowledge as a first-class layer. It is where the cost of bad knowledge stops being local and starts being systemic.</p>
+
+  <div class="faq">
+    <div>
+      <dt>Is agent-to-agent communication mainly a protocol problem?</dt>
+      <dd>No. Protocol determines whether messages can be exchanged. Knowledge quality determines whether the messages are worth exchanging. Relevance, context, structure, traceability, and currency are knowledge questions as much as communication questions.</dd>
+    </div>
+    <div>
+      <dt>What is the biggest risk when agents share knowledge?</dt>
+      <dd>That the system amplifies bad knowledge instead of filtering it. If one agent passes stale, vague, or unowned knowledge to another, the error can move into the next decision loop. Good communication depends on good knowledge at the source.</dd>
+    </div>
+    <div>
+      <dt>How does this relate to the knowledge lifecycle?</dt>
+      <dd>It depends on it. Creation, representation, extraction, updates, and deprecation all shape what agents have to share. If the lifecycle is weak, agent-to-agent communication spreads weak knowledge faster rather than better knowledge more efficiently.</dd>
+    </div>
+    <div>
+      <dt>Where is this heading?</dt>
+      <dd>Toward systems where agents coordinate over shared knowledge with clear boundaries, enough context to act, and enough traceability to tell good knowledge from weak. That is less about agents talking and more about knowledge being usable across agents.</dd>
+    </div>
+  </div>
+
+  <div class="faq-json-ld" style="display:none">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is agent-to-agent communication mainly a protocol problem?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Protocol determines whether messages can be exchanged. Knowledge quality determines whether the messages are worth exchanging. Relevance, context, structure, traceability, and currency are knowledge questions as much as communication questions." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the biggest risk when agents share knowledge?",
+        "acceptedAnswer": { "@type": "Answer", "text": "That the system amplifies bad knowledge instead of filtering it. If one agent passes stale, vague, or unowned knowledge to another, the error can move into the next decision loop. Good communication depends on good knowledge at the source." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this relate to the knowledge lifecycle?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on it. Creation, representation, extraction, updates, and deprecation all shape what agents have to share. If the lifecycle is weak, agent-to-agent communication spreads weak knowledge faster rather than better knowledge more efficiently." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is this heading?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Toward systems where agents coordinate over shared knowledge with clear boundaries, enough context to act, and enough traceability to tell good knowledge from weak. That is less about agents talking and more about knowledge being usable across agents." }
+      }
+    ]
+  }
+  </script>
+  </div>
+</article>
+
+<nav class="pagelinks" aria-label="Page">
+  <div><strong>This page:</strong> Agent-to-Agent Communication — knowledge sharing across agents.</div>
+  <div>
+    <span>Related:</span>
+    <a href="context-engineering.html">Context Engineering</a> ·
+    <a href="enterprise-agentic-ai.html">Agentic AI and Knowledge</a> ·
+    <a href="llms.html">LLMs</a>
+  </div>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Knowledge Sidekick — knowledge for agentic AI.</div>
+    <div class="reach-links"><a href="https://knowledgesidekick.org">Org (open source &amp; open standards)</a> · <a href="https://meetup.com/darling-meetup">Community</a> · <a href="contact.html">Contact</a></div>
+  </div>
+</footer>
+<script src="nav.js"></script>
+</body>
+</html>
