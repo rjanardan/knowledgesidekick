@@ -9,7 +9,7 @@
 
   const NAV = {
     logoHref: '/',
-    logoText: { name: 'Knowledge Sidekick', tag: 'knowledge for agentic AI' },
+    logoText: { name: 'Knowledge Sidekick', tag: 'Knowledge Engineering for the AI-Native Company' },
     groups: [
       {
         label: 'Agents',
