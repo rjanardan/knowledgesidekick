@@ -1,6 +1,6 @@
 # knowledgesidekick.com
 
-Business and technical education on why knowledge is the missing layer in agentic AI
+Business and technical education on why knowledge is the missing layer in Agentic AI
 and AI agents, and what disciplined knowledge representation, management, context
 engineering, grounding, and encoding look like in practice.
 
