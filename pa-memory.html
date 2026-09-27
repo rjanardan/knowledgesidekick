@@ -57,26 +57,24 @@
   <p>A useful memory is not only a place to put things. It has to be retrievable at the right time, interpreted in the right context, and kept from becoming stale. Otherwise the assistant is not "remembering" so much as carrying baggage. A recalled fact from a year ago can be helpful; the same fact surfaced without any sense of whether it still applies can be worse than useless.</p>
   <p>That is one reason memory and context engineering are related. The assistant has to decide what from memory is relevant now, what is just history, and what should be brought forward quietly. Good memory is not maximal memory. It is memory that earns its place in the current task.</p>
 
-  <div class="faq">
-    <div>
-      <dt>What is the point of splitting memory into short, medium, and long term?</dt>
-      <dd>Because they answer different needs and deserve different rules. Short-term is for staying coherent in a session. Medium-term is for continuity across a near-term working window. Long-term is for durable preference and facts. Mixing them makes it harder to decide what should persist, what should fade, and what the user should control.</dd>
-    </div>
-    <div>
-      <dt>Does more memory always make an assistant better?</dt>
-      <dd>No. More memory can help if it is the right memory and it is used well, but it can also make the assistant noisier, more invasive, and harder to trust. Useful memory is selective, retrievable when needed, and not confused with a permanent record of everything the assistant ever saw.</dd>
-    </div>
-    <div>
-      <dt>What should an assistant remember long-term?</dt>
-      <dd>Things that are stable and genuinely useful over time: durable preferences, recurring routines, and facts that still matter later. It should not, by default, treat every passing detail as equally worth keeping. The strongest design is selective and legible, not exhaustive.</dd>
-    </div>
-    <div>
-      <dt>What is the difference between memory and context?</dt>
-      <dd>Context is usually the immediate or near-term material the assistant is using right now to reason. Memory is what is retained beyond the immediate moment, often across sessions. They overlap, but they are not the same: context is what is in play now, and memory is what is carried forward from elsewhere.</dd>
-    </div>
-  </div>
+  <section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions</h2>
+  <div class="faq" role="region">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the point of splitting memory into short, medium, and long term?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Because they answer different needs and deserve different rules. Short-term is for staying coherent in a session. Medium-term is for continuity across a near-term working window. Long-term is for durable preference and facts. Mixing them makes it harder to decide what should persist, what should fade, and what the user should control.</p></div>
 
-  <div class="faq-json-ld" style="display:none">
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>Does more memory always make an assistant better?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>No. More memory can help if it is the right memory and it is used well, but it can also make the assistant noisier, more invasive, and harder to trust. Useful memory is selective, retrievable when needed, and not confused with a permanent record of everything the assistant ever saw.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What should an assistant remember long-term?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Things that are stable and genuinely useful over time: durable preferences, recurring routines, and facts that still matter later. It should not, by default, treat every passing detail as equally worth keeping. The strongest design is selective and legible, not exhaustive.</p></div>
+
+    <div class="q" role="button" tabindex="0" aria-expanded="false"><span>What is the difference between memory and context?</span><button class="open" aria-label="Toggle answer">+</button></div>
+    <div class="a"><p>Context is usually the immediate or near-term material the assistant is using right now to reason. Memory is what is retained beyond the immediate moment, often across sessions. They overlap, but they are not the same: context is what is in play now, and memory is what is carried forward from elsewhere.</p></div>
+  </div>
+</section>
+
+<div class="faq-json-ld" style="display:none">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

@@ -1,6 +1,6 @@
 /* ============================================================
    knowledgesidekick.com — shared stylesheet
-   One system, five theme personalities.
+   Business site: applications, use cases, case studies, company news.
    Light theme. Body ~15px. h2 ~23px. Code ~12.5px.
    ============================================================ */
 
@@ -46,9 +46,9 @@ body{
 a{color:var(--accent-ink);text-decoration:none}
 a:hover{text-decoration:underline}
 h1,h2,h3,h4{line-height:1.25;color:var(--ink);font-weight:650}
-h1{font-size:clamp(22px,3vw,30px)}
-h2{font-size:clamp(18px,2.4vw,23px)}
-h3{font-size:17px}
+h1{font-size:clamp(22px,3vw,30px);margin:0 0 14px}
+h2{font-size:clamp(18px,2.4vw,23px);margin:18px 0 12px}
+h3{font-size:17px;margin:14px 0 8px}
 p{margin:0 0 14px}
 code,pre,kbd,tt{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12.5px}
 pre{margin:0 0 16px;overflow:auto}
@@ -150,14 +150,15 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 /* ---------- Layout ---------- */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 section{scroll-margin-top:84px}
-.page{padding:46px 0 80px}
+.page{padding:14px 0 24px}
+.page .wrap > section:first-of-type h2{margin-top:12px}
 
 /* ---------- Hero ---------- */
-.hero{background:linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);border-bottom:1px solid var(--line);padding:54px 0 38px}
-.hero .wrap{display:grid;grid-template-columns:1fr;gap:22px}
-.hero h1{margin:0 0 14px;max-width:20ch}
-.hero .lede{font-size:18px;line-height:1.55;color:var(--ink-soft);max-width:60ch}
-.hero .meta{font-size:13.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap;margin-top:6px}
+.hero{background:linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);border-bottom:1px solid var(--line);padding:50px 0 16px}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:16px}
+.hero h1{margin:0 0 14px;max-width:30ch}
+.hero .lede{font-size:18px;line-height:1.55;color:var(--ink-soft);max-width:none}
+.hero .meta{font-size:13.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap;margin-top:0}
 
 /* ---------- Definitions / callout ---------- */
 .callout{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
@@ -173,7 +174,7 @@ section{scroll-margin-top:84px}
 .challenge p{margin:0 0 8px}
 .challenge p:last-child{margin-bottom:0}
 
-/* ---------- Sources table (enterprise) ---------- */
+/* ---------- Sources table ----------
 .table-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line)}
@@ -182,7 +183,7 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute
 tbody tr:nth-child(even){background:var(--panel-2)}
 .table-wrap .foot{padding:10px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);background:var(--panel-2)}
 
-/* ---------- Scene / walkthrough (personal) ---------- */
+/* ---------- Scene / walkthrough ---------- */
 .scene{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:18px 20px;box-shadow:var(--shadow);margin:0 0 18px}
 .scene .step{display:flex;gap:14px;align-items:flex-start;margin:0 0 14px}
 .scene .step:last-child{margin-bottom:0}
@@ -197,7 +198,7 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .checklist li.privacy:before{background:var(--accent);border-color:var(--accent)}
 .checklist li.privacy:after{content:"";position:absolute;left:4px;top:1px;width:7px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 
-/* ---------- Pattern blocks (context eng) ---------- */
+/* ---------- Pattern blocks ---------- */
 .pattern{border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:var(--radius);background:var(--panel);padding:16px 18px;box-shadow:var(--shadow);margin:0 0 14px}
 .pattern h3{margin:0 0 6px;font-size:16px}
 .pattern .purpose{font-size:13.5px;color:var(--ink-soft);margin:0 0 10px}
@@ -213,14 +214,15 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .cost-table td:first-child{font-weight:600;width:38%}
 
 /* ---------- FAQ ---------- */
-.faq-section{margin-top:34px;border-top:1px solid var(--line);padding-top:22px}
-.faq-section h2{font-size:20px;margin-bottom:14px}
+.faq-section{margin-top:18px;border-top:1px solid var(--line);padding-top:2px}
+.faq-section h2{font-size:20px;margin-bottom:10px}
 .faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-.faq .q{padding:14px 18px;border-bottom:1px solid var(--line);font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq .q{padding:12px 18px;border-bottom:1px solid var(--line);font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
 .faq .q:last-child{border-bottom:0}
 .faq .q .open{background:transparent;border:0;color:var(--muted);font-size:13px;padding:2px 6px;border-radius:5px}
 .faq .q .open[aria-expanded="true"]{background:var(--accent-soft);color:var(--accent-ink)}
-.faq .a{display:none;padding:0 18px 14px;color:var(--ink-soft)}
+.faq .a{display:none;padding:4px 18px 6px;line-height:1.55;color:var(--ink-soft)}
+.faq .a p{margin:0}
 .faq .a.open{display:block}
 
 /* ---------- Bio / about block ---------- */
@@ -241,7 +243,7 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .disclaimer{font-size:13px;color:var(--muted);margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
 
 /* ---------- Footer ---------- */
-.site-footer{border-top:1px solid var(--line);background:var(--panel);margin-top:30px}
+.site-footer{border-top:1px solid var(--line);background:var(--panel);margin-top:14px}
 .site-footer .wrap{padding:22px 24px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
 .site-footer a{color:var(--ink-soft)}
 
@@ -252,7 +254,7 @@ tbody tr:nth-child(even){background:var(--panel-2)}
 .sources li{margin-bottom:4px}
 
 /* ---------- Misc ---------- */
-.prose h2{margin-top:26px}
+.prose h2{margin-top:18px}
 .lead{font-size:16.5px;color:var(--ink-soft);line-height:1.55}
 .small{font-size:13px;color:var(--muted)}
 .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-ink);font-weight:600;margin-bottom:8px;display:block}
