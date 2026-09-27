@@ -31,7 +31,8 @@
           { label: 'Context Engineering', href: '/context-engineering.html',     local: true },
           { label: 'Token Savings',       href: '/token-savings.html',          local: true },
           { label: 'Grounding',           href: '/grounding.html',              local: true },
-          { label: 'Knowledge Lifecycle', href: '/knowledge-lifecycle.html',     local: true }
+          { label: 'Knowledge Lifecycle', href: '/knowledge-lifecycle.html',     local: true },
+          { label: 'Knowledge Formats',   href: '/knowledge-formats.html',       local: true }
         ]
       },
       {
@@ -173,6 +174,24 @@
       a.classList.toggle('current', href === pathname);
     });
   }
+
+  // ---- FAQ show/hide (shared chrome) ----
+  // .faq .a is display:none; .faq .a.open is display:block (style.css).
+  // Flip the sibling answer and both aria-expanded flags on click/Enter/Space.
+  document.querySelectorAll('.faq .q').forEach(q => {
+    const toggle = () => {
+      const expanded = q.getAttribute('aria-expanded') === 'true';
+      q.setAttribute('aria-expanded', String(!expanded));
+      const btn = q.querySelector('.open');
+      if (btn) btn.setAttribute('aria-expanded', String(!expanded));
+      const a = q.nextElementSibling;
+      if (a && a.classList.contains('a')) a.classList.toggle('open', !expanded);
+    };
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {

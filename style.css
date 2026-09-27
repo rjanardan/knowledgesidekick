@@ -27,7 +27,7 @@
   --emerald-soft:#e7f6ef;
   --shadow:0 1px 2px rgba(20,18,15,.04), 0 4px 16px rgba(20,18,15,.04);
   --shadow-lg:0 4px 12px rgba(20,18,15,.06), 0 14px 40px rgba(20,18,15,.08);
-  --maxw:1180px;
+  --maxw:1140px;
   --radius:10px;
 }
 
@@ -111,6 +111,17 @@ hr{border:0;border-top:1px solid var(--line);margin:28px 0}
 .menu-toggle:hover{background:var(--panel-2)}
 .menu-toggle[aria-expanded="true"]{background:var(--panel-2)}
 
+/* ---------- Site tagline band: every page, below 1100px, under the header hairline ---------- */
+.tagband{display:none;padding:10px 16px 9px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.tagband .wk{max-width:var(--maxw);margin:0 auto}
+
+/* Narrow window: drop the brand tagline so the fixed-width header never overflows
+   the viewport (kept inline with the .org site). */
+@media (max-width:1099px){
+  .brand-text span{display:none}
+  .tagband{display:block}
+}
+
 /* ---------- Mobile hamburger drawer ---------- */
 @media (max-width:980px){
   .nav-wrap{display:none;flex-direction:column;gap:1px;width:100%;
@@ -163,7 +174,7 @@ section{scroll-margin-top:84px}
 .challenge p:last-child{margin-bottom:0}
 
 /* ---------- Sources table (enterprise) ---------- */
-.table-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.table-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line)}
 th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
